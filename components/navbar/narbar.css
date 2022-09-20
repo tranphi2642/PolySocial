@@ -1,0 +1,162 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto, sans-serif !important;
+    font-weight: 400;
+}
+
+body {
+    background: #ececec;
+}
+
+.nav-links {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #fff;
+    padding: 20px 15px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-links li {
+    display: block;
+    list-style: none;
+    margin: 0 12px;
+}
+
+.nav-links li a {
+    position: relative;
+    color: #333;
+    font-weight: 700;
+    padding: 6px 0;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.nav-links li a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 3px;
+    width: 0%;
+    background: linear-gradient(90deg, #f12711, #f5af19);
+    border-radius: 12px;
+    transition: all 0.4s ease;
+}
+
+.nav-links li a:hover:before {
+    width: 100%;
+}
+
+.nav-links li.center a:before {
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.nav-links li.upward a:before {
+    width: 100%;
+    bottom: -5px;
+    opacity: 0;
+}
+
+.nav-links li.upward a:hover:before {
+    bottom: 0px;
+    opacity: 1;
+}
+
+.nav-links li.forward a:before {
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+.nav-links li.forward a:hover:before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links .nav-logo a {
+    display: flex;
+    align-items: center;
+}
+
+.nav-links .nav-logo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+.nav-items {
+    display: flex;
+    align-items: center;
+}
+
+.nav-items.infor span {
+    color: #333;
+    font-weight: 700;
+    padding-right: 15px;
+}
+
+.nav-items.infor img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.nav-links li.navbar-dropdown {
+    position: relative;
+}
+
+.nav-links li.navbar-dropdown:hover .dropdown {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(30px);
+}
+
+.nav-links li.navbar-dropdown .dropdown {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    padding: 20px;
+    top: 100%;
+    transform: translateY(50px);
+    right: 0;
+    background-color: #fff;
+    box-shadow: 0px 10px 10px 3px rgba(0, 0, 0, 0.3);
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
+    z-index: 111;
+    transition: 0.4s all;
+}
+
+.nav-links li.navbar-dropdown .dropdown a {
+    display: block;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    font-weight: 700;
+}
+
+.nav-dropdown .dropdown a:hover {
+    padding-left: 30px;
+}
+
+.nav-links li a:hover {
+    color: #fb7623;
+}
+
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    z-index: 999;
+}

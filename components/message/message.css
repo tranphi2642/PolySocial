@@ -1,0 +1,267 @@
+/* Google Fonts Import Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: roboto, sans-serif !important;
+    font-weight: 400;
+}
+
+body {
+    background: #ececec;
+}
+
+.container-message {
+    width: 75%;
+    height: 650px;
+    border-radius: 20px;
+    background: white;
+    margin: 0 auto;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.chats {
+    width: 280px;
+    height: 100%;
+    border-right: 1px solid #e4e4e4;
+}
+
+.sidebar {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.sidebar img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.sidebar span {
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.search {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0px 10px 0px;
+}
+
+.search input {
+    position: absolute;
+    border: 1px solid #e6e5e5;
+    background-color: #e1e1e1;
+    padding: 0 25px 0 50px;
+    margin-left: 15px;
+    border-radius: 20px;
+    height: 100%;
+    width: 90%;
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+}
+
+.search i {
+    position: absolute;
+    left: 25px;
+    font-size: 22px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #585858;
+}
+
+.chat {
+    width: 100%;
+    height: calc(100% - 120px);
+    overflow-y: auto;
+}
+
+.chat::-webkit-scrollbar {
+    width: 5px;
+}
+
+.userChat {
+    display: flex;
+    margin: 20px;
+    align-items: center;
+}
+
+.userChat img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.userChatInfo {
+    margin-left: 10px;
+}
+
+.userChatInfo span {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.messages {
+    width: calc(100% - 280px);
+    height: 100%;
+}
+
+.sidebar-message {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #e4e4e4;
+}
+
+.sidebar-message img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.sidebarInfo span {
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.sidebarIcon {
+    margin-left: auto;
+}
+
+.sidebarIcon i {
+    font-size: 25px;
+    margin-left: 10px;
+}
+
+.message-body {
+    width: 100%;
+    height: calc(100% - 120px);
+    overflow-y: auto;
+    background: #ddddf7;
+}
+
+.message-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.message-body .message {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.message-body .message .messageInfo {
+    display: flex;
+    flex-direction: column;
+    color: gray;
+    font-weight: 300;
+}
+
+.message-body .message .messageInfo img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.message-body .message .messageInfo span {
+    font-size: x-small;
+}
+
+.message-body .message .messageContent {
+    max-width: 80%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.message-body .message .messageContent p {
+    background-color: white;
+    padding: 10px;
+    border-radius: 0px 10px 10px 10px;
+    max-width: max-content;
+}
+
+.message-body .message .messageContent img {
+    width: 50%;
+}
+
+.message-body .message.owner {
+    flex-direction: row-reverse;
+}
+
+.message-body .message.owner .messageContent {
+    align-items: flex-end;
+}
+
+.message-body .message.owner p {
+    background-color: #fb7623;
+    color: white;
+    border-radius: 10px 0px 10px 10px;
+}
+
+
+.input {
+    height: 60px;
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid #e4e4e4;
+    border-radius: 0px 0px 20px 0px;
+}
+
+.input input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 17px;
+    font-weight: 300;
+    padding: 10px;
+}
+
+.input input::placeholder {
+    color: lightgray;
+}
+
+.input .send {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.input .send img {
+    height: 24px;
+    cursor: pointer;
+}
+
+.input .send button {
+    border: none;
+    border-radius: 10px;
+    padding: 10px 15px;
+    color: white;
+    background-color: #ff6e1a;
+    cursor: pointer;
+    margin-right: 20px;
+}
