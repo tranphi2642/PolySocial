@@ -1,0 +1,17 @@
+.chart-container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.chart-container .title {
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: var(--text-color);
+}
+
+#canvas {
+    width: 100%;
+}

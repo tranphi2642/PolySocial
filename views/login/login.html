@@ -1,79 +1,28 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-
-<head>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" href="/views/login/login.css">
-    <link rel="stylesheet" href="/components/navbar/narbar.css">
-    <!----===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-</head>
-
-<body>
-    <nav class="navbar sticky">
-        <ul class="nav-links">
-            <div class="nav-logo">
-                <li>
-                    <a class="forward" href="#">
-                        <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n-234x375.png"
-                            alt="PolySoial">
-                        PolySocial
-                    </a>
-                </li>
-            </div>
-
-            <div class="nav-items">
-                <li class="center"><a href="#">Trang chủ</a></li>
-                <li class="center"><a href="#">Diễn đàn</a></li>
-                <li class="center"><a href="/components/message/message.html">Tin nhắn</a></li>
-                <li class="center"><a href="/views/feedback/feedback.htm">Phản hồi</a></li>
-            </div>
-
-            <div class="nav-items infor">
-                <!-- <li class="upward navbar-dropdown">
-                    <a href="#">Ngôn ngữ</a>
-                    <div class="dropdown">
-                        <a href="#">English</a>
-                        <a href="#">Vietnamese</a>
-                    </div>
-                </li> -->
-                <li class="upward"><a href="/views/login/login.html">Đăng nhập</a></li>
-
-                <!-- <span>Trần Phi</span>
-                <img src="/assets/images/1.jpg" alt=""> -->
-            </div>
-        </ul>
-    </nav>
-
-    <section class="login">
-        <div class="form">
-            <div class="form-content">
-                <header class="title">Trang đăng nhập</header>
-                <form action="#">
-                    <div class="field input-field">
-                        <input type="email" placeholder="Email" class="input">
-                    </div>
-                    <div class="field input-field">
-                        <input type="password" placeholder="Mật khẩu" class="password">
-                        <i class='uil uil-eye-slash eye-icon'></i>
-                    </div>
-                    <div class="field button-field">
-                        <button>Đăng nhập</button>
-                    </div>
-                </form>
-            </div>
-            <div class="line"></div>
-            <div class="media-options">
-                <a href="#" class="field google">
-                    <img src="https://dd7tel2830j4w.cloudfront.net/f1633714040959x202707873005269600/Google__G__Logo.svg.png"
-                        alt="" class="google-img">
-                    <span>Đăng nhập bằng Google</span>
-                </a>
-            </div>
+<div ng-include="'/components/navbar/navbar.html'"></div>
+<section class="login">
+    <div class="form">
+        <div class="form-content">
+            <header class="title">Trang đăng nhập</header>
+            <form action="#">
+                <div class="field input-field">
+                    <input type="email" placeholder="Email" class="input">
+                </div>
+                <div class="field input-field">
+                    <input type="password" placeholder="Mật khẩu" class="password">
+                    <i class='uil uil-eye-slash eye-icon'></i>
+                </div>
+                <div class="field button-field">
+                    <button>Đăng nhập</button>
+                </div>
+            </form>
         </div>
-    </section>
-
-    <script src="/style/js/login.js"></script>
-</body>
-
-</html>
+        <div class="line"></div>
+        <div class="media-options">
+            <a href="#" class="field google">
+                <img src="https://dd7tel2830j4w.cloudfront.net/f1633714040959x202707873005269600/Google__G__Logo.svg.png"
+                    alt="" class="google-img">
+                <span>Đăng nhập bằng Google</span>
+            </a>
+        </div>
+    </div>
+</section>

@@ -1,18 +1,3 @@
-/* Google Fonts Import Link */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: roboto, sans-serif !important;
-    font-weight: 400;
-}
-
-body {
-    background: #ececec;
-}
-
 .container-message {
     width: 75%;
     height: 650px;
