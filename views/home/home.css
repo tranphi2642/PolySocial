@@ -191,8 +191,13 @@ main .container .left .profile {
     border-radius: var(--card-border-radius);
     display: flex;
     align-items: center;
-    column-gap: 1rem;
+    column-gap: 1.2rem;
     width: 100%;
+}
+
+main .container .left .profile h4 {
+    font-weight: 700;
+    color: var(--color-black);
 }
 
 /*================== SIDEBAR ==================*/
@@ -238,6 +243,7 @@ main .container .left .profile {
 .left .sidebar h3 {
     margin-left: 1.5rem;
     font-size: 1rem;
+    color: var(--color-black);
 }
 
 .left .sidebar .active {
