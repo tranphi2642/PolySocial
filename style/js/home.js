@@ -63,14 +63,14 @@ const searchMessage = () => {
 
 messageSearch.addEventListener('keyup', searchMessage)
 
-messageNotification.addEventListener('click', () => {
-  messages.style.boxShadow = '0 0 1rem var(--color-primary)'
-  messageNotification.querySelectorAll('.notification-count')[0].style.display =
-    'none'
-  setTimeout(() => {
-    messages.style.boxShadow = 'none'
-  }, 1000)
-})
+// messageNotification.addEventListener('click', () => {
+//   messages.style.boxShadow = '0 0 1rem var(--color-primary)'
+//   messageNotification.querySelectorAll('.notification-count')[0].style.display =
+//     'none'
+//   setTimeout(() => {
+//     messages.style.boxShadow = 'none'
+//   }, 1000)
+// })
 
 //theme
 const onpenThemModel = () => {
