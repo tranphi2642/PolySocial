@@ -414,9 +414,15 @@ main .container .right {
 }
 
 .right .messages {
+    height: 500px;
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
+    overflow-y: auto;
+}
+
+.right .messages::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
 .right .messages .heading {
