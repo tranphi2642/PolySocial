@@ -144,7 +144,7 @@ colors.forEach((color) => {
     } else if (color.classList.contains('color-2')) {
       primaryHue = 52
     } else if (color.classList.contains('color-3')) {
-      primaryHue = 352
+      primaryHue = 13
     } else if (color.classList.contains('color-4')) {
       primaryHue = 152
     } else if (color.classList.contains('color-5')) {
