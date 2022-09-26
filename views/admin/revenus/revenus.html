@@ -1,134 +1,25 @@
-<!DOCTYPE html>
-<!--=== Coding by CodingLab | www.codinglabweb.com === -->
-<html lang="en">
+<div ng-include="'/components/admin/navbar/navbar.html'"></div>
+<!----------------------------Main--------------------------------->
+<section class="dashboard" ng-controller="revenusCtrl">
+    <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!----======== CSS ======== -->
-    <link rel="stylesheet" href="/views/admin/home/home.css">
-    <link rel="stylesheet" href="/views/admin/revenus/revenus.css">
-
-    <!----===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-    <title>Admin Dashboard Panel</title>
-</head>
-
-<body>
-    <nav>
-        <div class="logo-name">
-            <div class="logo-image">
-                <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n-234x375.png"
-                    alt="PolySoial">
-            </div>
-
-            <span class="logo_name">PolySoial</span>
+        <div class="search-box">
+            <i class="uil uil-search"></i>
+            <input type="text" placeholder="Tìm kiếm ở đây">
         </div>
 
-        <div class="menu-items">
-            <ul class="nav-links">
-                <li>
-                    <a href="/views/admin/home/home.html">
-                        <i class="uil uil-estate"></i>
-                        <span class="link-name">Trang chủ</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/views/admin/revenus/revenus.html">
-                        <i class="uil uil-chart"></i>
-                        <span class="link-name">Thống kê</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-users-alt"></i>
-                        <span class="link-name">Nhóm</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-files-landscapes"></i>
-                        <span class="link-name">Bài viết</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/views/admin/likes/likes.html">
-                        <i class="uil uil-heart-alt"></i>
-                        <span class="link-name">Yêu thích</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/views/admin/comments/comments.html">
-                        <i class="uil uil-comments"></i>
-                        <span class="link-name">Bình luận</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="/views/admin/shares/shares.html">
-                        <i class="uil uil-share"></i>
-                        <span class="link-name">Chia sẻ</span>
-                    </a>
-                </li>
-                <li>
-                    <a href="#">
-                        <i class="uil uil-folder-open"></i>
-                        <span class="link-name">Tệp tin</span>
-                    </a>
-                </li>
-            </ul>
-
-            <ul class="logout-mode">
-                <li><a href="#">
-                        <i class="uil uil-signout"></i>
-                        <span class="link-name">Đăng xuất</span>
-                    </a></li>
-
-                <li class="mode">
-                    <a href="#">
-                        <i class="uil uil-moon"></i>
-                        <span class="link-name">Giao diện</span>
-                    </a>
-
-                    <div class="mode-toggle">
-                        <span class="switch"></span>
-                    </div>
-                </li>
-            </ul>
+        <div class="info">
+            <span>Trần Phi</span>
+            <img src="/assets/images/1.jpg" alt="">
         </div>
-    </nav>
+    </div>
 
-    <section class="dashboard">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
-
-            <div class="search-box">
-                <i class="uil uil-search"></i>
-                <input type="text" placeholder="Tìm kiếm ở đây">
-            </div>
-
-            <div class="info">
-                <span>Trần Phi</span>
-                <img src="/assets/images/1.jpg" alt="">
-            </div>
+    <div class="dash-content">
+        <div class="chart-container">
+            <div class="title">Thống kê</div>
+            <canvas id="canvas"></canvas>
         </div>
+    </div>
 
-        <div class="dash-content">
-            <div class="chart-container">
-                <div class="title">Thống kê</div>
-                <canvas id="canvas"></canvas>
-            </div>
-        </div>
-
-    </section>
-
-    <!----===== JS ===== -->
-    <script src="/style/js/index.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
-    <script src="/style/js/chart.js"></script>
-
-</body>
-
-</html>
+</section>

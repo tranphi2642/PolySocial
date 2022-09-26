@@ -1,568 +1,531 @@
-<!DOCTYPE html>
-<html lang="en">
+<nav ng-include="'/components/navbar/navbar.html'"></nav>
+<!------------------------------- Main ---------------------------->
+<main ng-controller="homeCtrl">
+    <div class="container">
+        <!------------------------------- Left ---------------------------->
+        <div class="left">
+            <a href="#!profile" class="profile">
+                <div class="profile-photo">
+                    <img src="/assets/images/1.jpg" alt="">
+                </div>
+                <div class="handle">
+                    <h4>Trần Phi</h4>
+                    <p class="text-muted">@pi2642</p>
+                </div>
+            </a>
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PolySocial</title>
-    <!----===== Iconscout CSS ===== -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="/views/home/home.css">
-</head>
-
-<body>
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n-234x375.png"
-                    alt="PolySoial">
-                <span> PolySocial</span>
-            </div>
-            <div class="search-bar">
-                <i class='uil uil-search'></i>
-                <input type="search" placeholder="Tìm kiếm">
-            </div>
-            <div class="profile-picture">
-                <span>Trần Phi</span>
-                <img src="/assets/images/1.jpg" alt="">
-            </div>
-        </div>
-    </nav>
-
-    <!------------------------------- Main ---------------------------->
-
-    <main>
-        <div class="container">
-            <!------------------------------- Left ---------------------------->
-            <div class="left">
-                <a href="/views/profile/profile.html" class="profile">
-                    <div class="profile-photo">
-                        <img src="/assets/images/1.jpg" alt="">
-                    </div>
-                    <div class="handle">
-                        <h4>Trần Phi</h4>
-                        <p class="text-muted">@pi2642</p>
-                    </div>
+            <!------------------------------- Side bar ---------------------------->
+            <div class="sidebar">
+                <a class="menu-item active">
+                    <span><i class='uil uil-home'></i></span>
+                    <h3>Trang chủ</h3>
                 </a>
+                <a class="menu-item" id="notifications">
+                    <span><i class='uil uil-bell'><small class="notification-count">4</small></i></span>
+                    <h3>Thông báo</h3>
 
-                <!------------------------------- Side bar ---------------------------->
-                <div class="sidebar">
-                    <a class="menu-item active">
-                        <span><i class='uil uil-home'></i></span>
-                        <h3>Trang chủ</h3>
-                    </a>
-                    <a class="menu-item" id="notifications">
-                        <span><i class='uil uil-bell'><small class="notification-count">4</small></i></span>
-                        <h3>Thông báo</h3>
-
-                        <!------------------------------- Notification popup ---------------------------->
-                        <div class="notifications-popup">
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
-                                    <small class="text-muted">1 phút trước</small>
-                                </div>
+                    <!------------------------------- Notification popup ---------------------------->
+                    <div class="notifications-popup">
+                        <div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
                             </div>
-
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
-                                    <small class="text-muted">1 phút trước</small>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
-                                    <small class="text-muted">1 phút trước</small>
-                                </div>
-                            </div>
-
-                            <div>
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="notification-body">
-                                    <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
-                                    <small class="text-muted">1 phút trước</small>
-                                </div>
+                            <div class="notification-body">
+                                <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
+                                <small class="text-muted">1 phút trước</small>
                             </div>
                         </div>
-                        <!------------------------------- End Notification popup ---------------------------->
-                    </a>
-                    <a class="menu-item">
-                        <span><i class='uil uil-users-alt'><small class="notification-count">2</small></i></span>
-                        <h3>Nhóm</h3>
-                    </a>
-                    <a href="/components/message/message.html" class="menu-item" id="messages-notifacations">
-                        <span><i class='uil uil-envelope-alt'><small class="notification-count">5</small></i></span>
-                        <h3>Tin nhắn</h3>
-                    </a>
-                    <a href="/views/feedback/feedback.html" class="menu-item">
-                        <span><i class="uil uil-feedback"></i></span>
-                        <h3>Phản hồi</h3>
-                    </a>
-                    <a class="menu-item" id="theme">
-                        <span><i class='uil uil-palette'></i></span>
-                        <h3>Giao diện</h3>
-                    </a>
-                    <a href="/views/admin/home/home.html" class="menu-item">
-                        <span><i class='uil uil-shield'></i></span>
-                        <h3>Quản lý</h3>
-                    </a>
-                    <a class="menu-item">
-                        <span><i class='uil uil-setting'></i></span>
-                        <h3>Cài đặt</h3>
-                    </a>
-                </div>
-                <!------------------------------- End Sidebar ---------------------------->
-                <!-- <button class="btn btn-primary">Đăng xuất</button> -->
+
+                        <div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
+                            </div>
+                            <div class="notification-body">
+                                <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
+                                <small class="text-muted">1 phút trước</small>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
+                            </div>
+                            <div class="notification-body">
+                                <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
+                                <small class="text-muted">1 phút trước</small>
+                            </div>
+                        </div>
+
+                        <div>
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
+                            </div>
+                            <div class="notification-body">
+                                <b>Nguyễn Thăng</b> đã bình luận bài viết của bạn
+                                <small class="text-muted">1 phút trước</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!------------------------------- End Notification popup ---------------------------->
+                </a>
+                <a class="menu-item">
+                    <span><i class='uil uil-users-alt'><small class="notification-count">2</small></i></span>
+                    <h3>Nhóm</h3>
+                </a>
+                <a href="#!message" class="menu-item" id="messages-notifacations">
+                    <span><i class='uil uil-envelope-alt'><small class="notification-count">5</small></i></span>
+                    <h3>Tin nhắn</h3>
+                </a>
+                <a href="#!feedback" class="menu-item">
+                    <span><i class="uil uil-feedback"></i></span>
+                    <h3>Phản hồi</h3>
+                </a>
+                <a class="menu-item" id="theme">
+                    <span><i class='uil uil-palette'></i></span>
+                    <h3>Giao diện</h3>
+                </a>
+                <a href="/views/admin/index.html" class="menu-item">
+                    <span><i class='uil uil-shield'></i></span>
+                    <h3>Quản lý</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class='uil uil-setting'></i></span>
+                    <h3>Cài đặt</h3>
+                </a>
             </div>
-            <!------------------------------- Middle ---------------------------->
-            <div class="middle">
-                <!------------------------------- Create post ---------------------------->
-                <form class="create-post">
+            <!------------------------------- End Sidebar ---------------------------->
+            <!-- <button class="btn btn-primary">Đăng xuất</button> -->
+        </div>
+        <!------------------------------- Middle ---------------------------->
+        <div class="middle">
+            <!------------------------------- Create post ---------------------------->
+            <form class="create-post">
+                <div class="profile-photo">
+                    <img src="/assets/images/1.jpg" alt="">
+                </div>
+                <input type="text" name="post" id="create-post" placeholder="Hôm nay bạn muốn đăng gì thế?">
+                <input type="submit" value="Đăng bài" class="btn btn-primary">
+            </form>
+            <!------------------------------- End Create post ---------------------------->
+
+            <!------------------------------- Feeds ---------------------------->
+            <div class="feeds">
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="/assets/images/post.jpg" alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="/assets/images/post.jpg" alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="/assets/images/post.jpg" alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="/assets/images/1.jpg" alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="/assets/images/post.jpg" alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+                        <span><img src="/assets/images/1.jpg" alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+            </div>
+            <!------------------------------- End Feeds ---------------------------->
+        </div>
+        <!------------------------------- End Middle ---------------------------->
+
+        <!------------------------------- Right ---------------------------->
+        <div class="right">
+            <div class="messages">
+                <div class="heading">
+                    <h4>Messages</h4> <i class="uil uil-edit"></i>
+                </div>
+                <!------------------------------- Search bar ---------------------------->
+                <div class="search-bar">
+                    <i class="uil uil-search"></i>
+                    <input type="search" id="search-bar" placeholder="Tìm kiếm tin nhắn">
+                </div>
+                <!------------------------------- Messages Category ---------------------------->
+                <div class="category">
+                    <h6 class="active">Tin nhắn</h6>
+                    <h6 class="message-requests">Lời kết bạn (7)</h6>
+                </div>
+                <!------------------------------- Messages ---------------------------->
+                <div class="message">
                     <div class="profile-photo">
-                        <img src="/assets/images/1.jpg" alt="">
-                    </div>
-                    <input type="text" name="post" id="create-post" placeholder="Hôm nay bạn muốn đăng gì thế?">
-                    <input type="submit" value="Đăng bài" class="btn btn-primary">
-                </form>
-                <!------------------------------- End Create post ---------------------------->
-
-                <!------------------------------- Feeds ---------------------------->
-                <div class="feeds">
-                    <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h3>Trần Phi</h3>
-                                    <small> FPT Polytechnic, 15 phút trước </small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="/assets/images/post.jpg" alt="">
-                        </div>
-
-                        <div class="action-buttons">
-                            <div class="interaction-buttons">
-                                <span>
-                                    <i class="uil uil-heart"></i>
-                                    <i class="uil uil-comment-notes"></i>
-                                    <i class="uil uil-share-alt"></i>
-                                </span>
-                            </div>
-                            <div class="bookmark">
-                                <span>
-                                    <i class="uil uil-bookmark-full"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-
-                            <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
-                        </div>
-
-                        <div class="caption">
-                            <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
-                        </div>
-
-                        <div class="comments text-muted">Xem tất cả các bình luận</div>
+                        <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=O9LRAa6QqngAX9g22VR&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT9GeBaf7L3fTNOt0gz-5_2qQRjDdqgsDtx8hNLDXVANEA&oe=633048CA"
+                            alt="">
                     </div>
 
-                    <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h3>Trần Phi</h3>
-                                    <small> FPT Polytechnic, 15 phút trước </small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="/assets/images/post.jpg" alt="">
-                        </div>
-
-                        <div class="action-buttons">
-                            <div class="interaction-buttons">
-                                <span>
-                                    <i class="uil uil-heart"></i>
-                                    <i class="uil uil-comment-notes"></i>
-                                    <i class="uil uil-share-alt"></i>
-                                </span>
-                            </div>
-                            <div class="bookmark">
-                                <span>
-                                    <i class="uil uil-bookmark-full"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-
-                            <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
-                        </div>
-
-                        <div class="caption">
-                            <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
-                        </div>
-
-                        <div class="comments text-muted">Xem tất cả các bình luận</div>
-                    </div>
-
-                    <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h3>Trần Phi</h3>
-                                    <small> FPT Polytechnic, 15 phút trước </small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="/assets/images/post.jpg" alt="">
-                        </div>
-
-                        <div class="action-buttons">
-                            <div class="interaction-buttons">
-                                <span>
-                                    <i class="uil uil-heart"></i>
-                                    <i class="uil uil-comment-notes"></i>
-                                    <i class="uil uil-share-alt"></i>
-                                </span>
-                            </div>
-                            <div class="bookmark">
-                                <span>
-                                    <i class="uil uil-bookmark-full"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-
-                            <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
-                        </div>
-
-                        <div class="caption">
-                            <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
-                        </div>
-
-                        <div class="comments text-muted">Xem tất cả các bình luận</div>
-                    </div>
-
-                    <div class="feed">
-                        <div class="head">
-                            <div class="user">
-                                <div class="profile-photo">
-                                    <img src="/assets/images/1.jpg" alt="">
-                                </div>
-                                <div class="info">
-                                    <h3>Trần Phi</h3>
-                                    <small> FPT Polytechnic, 15 phút trước </small>
-                                </div>
-                            </div>
-                            <span class="edit">
-                                <i class="uil uil-ellipsis-h"></i>
-                            </span>
-                        </div>
-
-                        <div class="photo">
-                            <img src="/assets/images/post.jpg" alt="">
-                        </div>
-
-                        <div class="action-buttons">
-                            <div class="interaction-buttons">
-                                <span>
-                                    <i class="uil uil-heart"></i>
-                                    <i class="uil uil-comment-notes"></i>
-                                    <i class="uil uil-share-alt"></i>
-                                </span>
-                            </div>
-                            <div class="bookmark">
-                                <span>
-                                    <i class="uil uil-bookmark-full"></i>
-                                </span>
-                            </div>
-                        </div>
-
-                        <div class="liked-by">
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-                            <span><img src="/assets/images/1.jpg" alt=""></span>
-
-                            <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
-                        </div>
-
-                        <div class="caption">
-                            <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
-                        </div>
-
-                        <div class="comments text-muted">Xem tất cả các bình luận</div>
+                    <div class="message-body">
+                        <h5>Trần Phi</h5>
+                        <p class="text-muted">Xin chào</p>
                     </div>
                 </div>
-                <!------------------------------- End Feeds ---------------------------->
+
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://scontent-xsp1-3.xx.fbcdn.net/v/t39.30808-6/300743054_769601440955493_146726401145117441_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=jaGfbTDJjmgAX8KQwsv&_nc_ht=scontent-xsp1-3.xx&oh=00_AT9OLVIlMUUaZfItaSMqtMgCRc9dAV-AB0cq6zX3YkxpNw&oe=632F36EB"
+                            alt="">
+                    </div>
+
+                    <div class="message-body">
+                        <h5>Nguyễn Thăng</h5>
+                        <p class="text-muted">Xin chào</p>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=O9LRAa6QqngAX9g22VR&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT9GeBaf7L3fTNOt0gz-5_2qQRjDdqgsDtx8hNLDXVANEA&oe=633048CA"
+                            alt="">
+                    </div>
+
+                    <div class="message-body">
+                        <h5>Trần Phi</h5>
+                        <p class="text-muted">Xin chào</p>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/279012277_1901304883592608_7686786597801749328_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=x9AptT9bAxcAX_I3RmG&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9leq-nFhxQD5jGIXKBF8bCvE4J8DjBuFJ_uGILYPVMGg&oe=632ECE97"
+                            alt="">
+                    </div>
+
+                    <div class="message-body">
+                        <h5>Đặng Hoàng Duy</h5>
+                        <p class="text-muted">Xin chào</p>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.6435-9/122046789_983552028793396_7399787317949731093_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Vb6ca0XjIuQAX_-IAdX&_nc_ht=scontent.fsgn5-14.fna&oh=00_AT-Uk2JBrVMVOqH_ePqJCYLg3AKNtiOZyw8tof96igt5rQ&oe=634E910D"
+                            alt="">
+                    </div>
+
+                    <div class="message-body">
+                        <h5>Phan Nguyễn Đăng Trường</h5>
+                        <p class="text-muted">Xin chào</p>
+                    </div>
+                </div>
+
+                <div class="message">
+                    <div class="profile-photo">
+                        <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=O9LRAa6QqngAX9g22VR&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT9GeBaf7L3fTNOt0gz-5_2qQRjDdqgsDtx8hNLDXVANEA&oe=633048CA"
+                            alt="">
+                        <div class="active"></div>
+                    </div>
+
+                    <div class="message-body">
+                        <h5>Trần Phi</h5>
+                        <p class="text-muted">Xin chào</p>
+                    </div>
+                </div>
             </div>
-            <!------------------------------- End Middle ---------------------------->
+            <!------------------------------- End Messages ---------------------------->
 
-            <!------------------------------- Right ---------------------------->
-            <div class="right">
-                <div class="messages">
-                    <div class="heading">
-                        <h4>Messages</h4> <i class="uil uil-edit"></i>
-                    </div>
-                    <!------------------------------- Search bar ---------------------------->
-                    <div class="search-bar">
-                        <i class="uil uil-search"></i>
-                        <input type="search" id="search-bar" placeholder="Tìm kiếm tin nhắn">
-                    </div>
-                    <!------------------------------- Messages Category ---------------------------->
-                    <div class="category">
-                        <h6 class="active">Tin nhắn</h6>
-                        <h6 class="message-requests">Lời kết bạn (7)</h6>
-                    </div>
-                    <!------------------------------- Messages ---------------------------->
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=O9LRAa6QqngAX9g22VR&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT9GeBaf7L3fTNOt0gz-5_2qQRjDdqgsDtx8hNLDXVANEA&oe=633048CA"
-                                alt="">
-                        </div>
-
-                        <div class="message-body">
-                            <h5>Trần Phi</h5>
-                            <p class="text-muted">Xin chào</p>
-                        </div>
-                    </div>
-
-                    <div class="message">
+            <!------------------------------- Friend Requests ---------------------------->
+            <div class="friend-requests">
+                <h4>Lời kết bạn</h4>
+                <div class="request">
+                    <div class="info">
                         <div class="profile-photo">
                             <img src="https://scontent-xsp1-3.xx.fbcdn.net/v/t39.30808-6/300743054_769601440955493_146726401145117441_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=jaGfbTDJjmgAX8KQwsv&_nc_ht=scontent-xsp1-3.xx&oh=00_AT9OLVIlMUUaZfItaSMqtMgCRc9dAV-AB0cq6zX3YkxpNw&oe=632F36EB"
                                 alt="">
                         </div>
-
-                        <div class="message-body">
+                        <div>
                             <h5>Nguyễn Thăng</h5>
-                            <p class="text-muted">Xin chào</p>
+                            <p class="text-muted">
+                                2 bạn chung
+                            </p>
                         </div>
                     </div>
 
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=O9LRAa6QqngAX9g22VR&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT9GeBaf7L3fTNOt0gz-5_2qQRjDdqgsDtx8hNLDXVANEA&oe=633048CA"
-                                alt="">
-                        </div>
-
-                        <div class="message-body">
-                            <h5>Trần Phi</h5>
-                            <p class="text-muted">Xin chào</p>
-                        </div>
+                    <div class="action">
+                        <button class="btn btn-primary">Xác nhận</button>
+                        <button class="btn">Huỷ</button>
                     </div>
+                </div>
 
-                    <div class="message">
-                        <div class="profile-photo">
-                            <img src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/279012277_1901304883592608_7686786597801749328_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=x9AptT9bAxcAX_I3RmG&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9leq-nFhxQD5jGIXKBF8bCvE4J8DjBuFJ_uGILYPVMGg&oe=632ECE97"
-                                alt="">
-                        </div>
-
-                        <div class="message-body">
-                            <h5>Đặng Hoàng Duy</h5>
-                            <p class="text-muted">Xin chào</p>
-                        </div>
-                    </div>
-
-                    <div class="message">
+                <div class="request">
+                    <div class="info">
                         <div class="profile-photo">
                             <img src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.6435-9/122046789_983552028793396_7399787317949731093_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Vb6ca0XjIuQAX_-IAdX&_nc_ht=scontent.fsgn5-14.fna&oh=00_AT-Uk2JBrVMVOqH_ePqJCYLg3AKNtiOZyw8tof96igt5rQ&oe=634E910D"
                                 alt="">
                         </div>
-
-                        <div class="message-body">
+                        <div>
                             <h5>Phan Nguyễn Đăng Trường</h5>
-                            <p class="text-muted">Xin chào</p>
+                            <p class="text-muted">
+                                2 bạn chung
+                            </p>
                         </div>
                     </div>
 
-                    <div class="message">
+                    <div class="action">
+                        <button class="btn btn-primary">Xác nhận</button>
+                        <button class="btn">Huỷ</button>
+                    </div>
+                </div>
+
+                <div class="request">
+                    <div class="info">
                         <div class="profile-photo">
-                            <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=O9LRAa6QqngAX9g22VR&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT9GeBaf7L3fTNOt0gz-5_2qQRjDdqgsDtx8hNLDXVANEA&oe=633048CA"
+                            <img src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/279012277_1901304883592608_7686786597801749328_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=x9AptT9bAxcAX_I3RmG&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9leq-nFhxQD5jGIXKBF8bCvE4J8DjBuFJ_uGILYPVMGg&oe=632ECE97"
                                 alt="">
-                            <div class="active"></div>
                         </div>
+                        <div>
+                            <h5>Đặng Hoàng Duy</h5>
+                            <p class="text-muted">
+                                2 bạn chung
+                            </p>
+                        </div>
+                    </div>
 
-                        <div class="message-body">
-                            <h5>Trần Phi</h5>
-                            <p class="text-muted">Xin chào</p>
-                        </div>
+                    <div class="action">
+                        <button class="btn btn-primary">Xác nhận</button>
+                        <button class="btn">Huỷ</button>
                     </div>
                 </div>
-                <!------------------------------- End Messages ---------------------------->
-
-                <!------------------------------- Friend Requests ---------------------------->
-                <div class="friend-requests">
-                    <h4>Lời kết bạn</h4>
-                    <div class="request">
-                        <div class="info">
-                            <div class="profile-photo">
-                                <img src="https://scontent-xsp1-3.xx.fbcdn.net/v/t39.30808-6/300743054_769601440955493_146726401145117441_n.jpg?stp=cp6_dst-jpg&_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=jaGfbTDJjmgAX8KQwsv&_nc_ht=scontent-xsp1-3.xx&oh=00_AT9OLVIlMUUaZfItaSMqtMgCRc9dAV-AB0cq6zX3YkxpNw&oe=632F36EB"
-                                    alt="">
-                            </div>
-                            <div>
-                                <h5>Nguyễn Thăng</h5>
-                                <p class="text-muted">
-                                    2 bạn chung
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="action">
-                            <button class="btn btn-primary">Xác nhận</button>
-                            <button class="btn">Huỷ</button>
-                        </div>
-                    </div>
-
-                    <div class="request">
-                        <div class="info">
-                            <div class="profile-photo">
-                                <img src="https://scontent.fsgn5-14.fna.fbcdn.net/v/t1.6435-9/122046789_983552028793396_7399787317949731093_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=8bfeb9&_nc_ohc=Vb6ca0XjIuQAX_-IAdX&_nc_ht=scontent.fsgn5-14.fna&oh=00_AT-Uk2JBrVMVOqH_ePqJCYLg3AKNtiOZyw8tof96igt5rQ&oe=634E910D"
-                                    alt="">
-                            </div>
-                            <div>
-                                <h5>Phan Nguyễn Đăng Trường</h5>
-                                <p class="text-muted">
-                                    2 bạn chung
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="action">
-                            <button class="btn btn-primary">Xác nhận</button>
-                            <button class="btn">Huỷ</button>
-                        </div>
-                    </div>
-
-                    <div class="request">
-                        <div class="info">
-                            <div class="profile-photo">
-                                <img src="https://scontent.fsgn5-11.fna.fbcdn.net/v/t39.30808-6/279012277_1901304883592608_7686786597801749328_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=x9AptT9bAxcAX_I3RmG&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-11.fna&oh=00_AT9leq-nFhxQD5jGIXKBF8bCvE4J8DjBuFJ_uGILYPVMGg&oe=632ECE97"
-                                    alt="">
-                            </div>
-                            <div>
-                                <h5>Đặng Hoàng Duy</h5>
-                                <p class="text-muted">
-                                    2 bạn chung
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="action">
-                            <button class="btn btn-primary">Xác nhận</button>
-                            <button class="btn">Huỷ</button>
-                        </div>
-                    </div>
-                </div>
-                <!------------------------------- End Friend Request ---------------------------->
             </div>
-            <!------------------------------- End Right ---------------------------->
+            <!------------------------------- End Friend Request ---------------------------->
         </div>
-    </main>
+        <!------------------------------- End Right ---------------------------->
+    </div>
+</main>
 
-    <!------------------------------- Theme custom ---------------------------->
-    <div class="customize-theme">
-        <div class="card">
-            <h2>Giao điện custom</h2>
-            <p class="text-muted">Quản lý cỡ chữ, màu sắc và màu nền tuỳ theo ý của bạn</p>
+<!------------------------------- Theme custom ---------------------------->
+<div class="customize-theme">
+    <div class="card">
+        <h2>Giao điện custom</h2>
+        <p class="text-muted">Quản lý cỡ chữ, màu sắc và màu nền tuỳ theo ý của bạn</p>
 
-            <!-- Font-size -->
-            <div class="font-size">
-                <h4>Cỡ chữ</h4>
-                <div>
-                    <h6>Aa</h6>
-                    <div class="choose-size">
-                        <span class="font-size-1"></span>
-                        <span class="font-size-2"></span>
-                        <span class="font-size-3 active"></span>
-                        <span class="font-size-4"></span>
-                        <span class="font-size-5"></span>
-                    </div>
-                    <h3>Aa</h3>
+        <!-- Font-size -->
+        <div class="font-size">
+            <h4>Cỡ chữ</h4>
+            <div>
+                <h6>Aa</h6>
+                <div class="choose-size">
+                    <span class="font-size-1"></span>
+                    <span class="font-size-2"></span>
+                    <span class="font-size-3 active"></span>
+                    <span class="font-size-4"></span>
+                    <span class="font-size-5"></span>
                 </div>
+                <h3>Aa</h3>
             </div>
-            <!-- Color -->
-            <div class="color">
-                <h4>Màu sắc</h4>
-                <div class="choose-color">
-                    <span class="color-1"></span>
-                    <span class="color-2"></span>
-                    <span class="color-3 active"></span>
-                    <span class="color-4"></span>
-                    <span class="color-5"></span>
+        </div>
+        <!-- Color -->
+        <div class="color">
+            <h4>Màu sắc</h4>
+            <div class="choose-color">
+                <span class="color-1"></span>
+                <span class="color-2"></span>
+                <span class="color-3 active"></span>
+                <span class="color-4"></span>
+                <span class="color-5"></span>
+            </div>
+        </div>
+        <!-- Background-Color -->
+        <div class="background">
+            <h4>Màu nền</h4>
+            <div class="choose-bg">
+                <div class="bg-1 active">
+                    <span></span>
+                    <h5 for="bg-1">Trắng</h5>
                 </div>
-            </div>
-            <!-- Background-Color -->
-            <div class="background">
-                <h4>Màu nền</h4>
-                <div class="choose-bg">
-                    <div class="bg-1 active">
-                        <span></span>
-                        <h5 for="bg-1">Trắng</h5>
-                    </div>
 
-                    <div class="bg-2">
-                        <span></span>
-                        <h5 for="bg-2">Sầm</h5>
-                    </div>
+                <div class="bg-2">
+                    <span></span>
+                    <h5 for="bg-2">Sầm</h5>
+                </div>
 
-                    <div class="bg-3">
-                        <span></span>
-                        <h5 for="bg-3">Đêm</h5>
-                    </div>
+                <div class="bg-3">
+                    <span></span>
+                    <h5 for="bg-3">Đêm</h5>
                 </div>
             </div>
         </div>
     </div>
-
-    <script src="/style/js/home.js"></script>
-</body>
-
-</html>
+</div>

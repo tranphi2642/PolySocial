@@ -8,15 +8,10 @@
     <title>PolySocial</title>
 
     <!----===== CSS ===== -->
-    <link rel="stylesheet" href="/style/css/style.css">
-    <link rel="stylesheet" href="/components/navbar/narbar.css">
-    <link rel="stylesheet" href="/views/login/login.css">
-    <link rel="stylesheet" href="/views/home/home.css">
-    <link rel="stylesheet" href="/views/profile/profile.css">
-    <link rel="stylesheet" href="/views/editProfile/editProfile.css">
-    <link rel="stylesheet" href="/components/message/message.css">
-    <link rel="stylesheet" href="/views/feedback/feedback.css">
-    <link rel="stylesheet" href="/views/admin/home/home.html">
+    <link rel="stylesheet" href="/components/admin/navbar/navbar.css">
+    <link rel="stylesheet" href="/views/admin/home/home.css">
+    <link rel="stylesheet" href="/views/admin/likes/likes.css">
+    <link rel="stylesheet" href="/views/admin/revenus/revenus.css">
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
 
     <!----===== JS ===== -->
@@ -25,12 +20,14 @@
 
 </head>
 
-<body ng-app="myapp">
+<body ng-app="myadmin">
 
     <div ng-view></div>
 
     <!----===== JS ===== -->
-    <script src="/style/js/index.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.1/dist/chart.min.js"></script>
+    <script src="/style/js/admin.js"></script>
+
 </body>
 
 </html>
