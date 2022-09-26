@@ -39,7 +39,7 @@ app.config(function ($routeProvider) {
 })
 
 app.controller('loginCtrl', function ($scope) {
-  window.onload = function () {
+  angular.element(document).ready(function () {
     //form login
     const pwShowHide = document.querySelectorAll('.eye-icon')
     pwShowHide.forEach((eyeIcon) => {
@@ -59,11 +59,11 @@ app.controller('loginCtrl', function ($scope) {
         })
       })
     })
-  }
+  })
 })
 
 app.controller('homeCtrl', function ($scope) {
-  window.onload = function () {
+  angular.element(document).ready(function () {
     //form home
     //sidebar
     const menuItem = document.querySelectorAll('.menu-item')
@@ -266,5 +266,5 @@ app.controller('homeCtrl', function ($scope) {
       bg2.classList.remove('active')
       changeBg()
     })
-  }
+  })
 })
