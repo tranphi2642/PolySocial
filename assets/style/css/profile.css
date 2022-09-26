@@ -6,7 +6,7 @@ main {
 
 .container-profile {
     width: 75%;
-    height: 650px;
+    height: 630px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -108,6 +108,17 @@ main {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 5px;
+}
+
+.profile-details-body button {
+    width: 20%;
+    height: 45px;
+    background: #ff7225;
+    border-radius: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    transform: translateX(200%);
+    color: white;
 }
 
 .profile-details-row {
