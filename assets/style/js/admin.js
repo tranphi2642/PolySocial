@@ -34,7 +34,7 @@ app.config(function ($routeProvider) {
 })
 
 app.controller('adminCtrl', function ($scope) {
-  window.onload = function () {
+  angular.element(document).ready(function () {
     //admin home
     const body = document.querySelector('body'),
       modeToggle = body.querySelector('.mode-toggle')
@@ -59,11 +59,11 @@ app.controller('adminCtrl', function ($scope) {
         localStorage.setItem('mode', 'light')
       }
     })
-  }
+  })
 })
 
 app.controller('revenusCtrl', function ($scope) {
-  window.onload = function () {
+  angular.element(document).ready(function () {
     const labels = [
       'Tháng 1',
       'Tháng 2',
@@ -106,7 +106,7 @@ app.controller('revenusCtrl', function ($scope) {
 
     const canvas = document.getElementById('canvas')
     const chart = new Chart(canvas, config)
-  }
+  })
 })
 
 app.controller('likesCtrl', function ($scope) {
