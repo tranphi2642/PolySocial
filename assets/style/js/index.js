@@ -4,36 +4,36 @@ app.config(function ($routeProvider) {
   $routeProvider
     .when(
       '/login',
-      { templateUrl: '/views/login/login.html' },
+      { templateUrl: './views/login/login.html' },
       { controller: 'loginCtrl' },
     )
     .when(
       '/home',
-      { templateUrl: '/views/home/home.html' },
+      { templateUrl: './views/home/home.html' },
       { controller: 'homeCtrl' },
     )
     .when(
       '/profile',
-      { templateUrl: '/views/profile/profile.html' },
+      { templateUrl: './views/profile/profile.html' },
       { controller: 'profileCtrl' },
     )
     .when(
       '/message',
-      { templateUrl: '/components/message/message.html' },
+      { templateUrl: './components/message/message.html' },
       { controller: 'messageCtrl' },
     )
     .when(
       '/feedback',
-      { templateUrl: '/views/feedback/feedback.html' },
+      { templateUrl: './views/feedback/feedback.html' },
       { controller: 'feedbackCtrl' },
     )
     .when(
       '/editProfile',
-      { templateUrl: '/views/editProfile/editProfile.html' },
+      { templateUrl: './views/editProfile/editProfile.html' },
       { controller: 'editProfileCtrl' },
     )
     .otherwise(
-      { templateUrl: '/views/login/login.html' },
+      { templateUrl: './views/login/login.html' },
       { controller: 'loginCtrl' },
     )
 })

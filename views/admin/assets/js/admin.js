@@ -4,33 +4,30 @@ app.config(function ($routeProvider) {
   $routeProvider
     .when(
       '/admin',
-      { templateUrl: '/views/admin/home/home.html' },
+      { templateUrl: './home/home.html' },
       { controller: 'adminCtrl' },
     )
     .when(
       '/revenus',
-      { templateUrl: '/views/admin/revenus/revenus.html' },
+      { templateUrl: './revenus/revenus.html' },
       { controller: 'revenusCtrl' },
     )
     .when(
       '/likes',
-      { templateUrl: '/views/admin/likes/likes.html' },
+      { templateUrl: './likes/likes.html' },
       { controller: 'likesCtrl' },
     )
     .when(
       '/shares',
-      { templateUrl: '/views/admin/shares/shares.html' },
+      { templateUrl: './shares/shares.html' },
       { controller: 'likesCtrl' },
     )
     .when(
       '/comments',
-      { templateUrl: '/views/admin/comments/comments.html' },
+      { templateUrl: './comments/comments.html' },
       { controller: 'likesCtrl' },
     )
-    .otherwise(
-      { templateUrl: '/views/admin/home/home.html' },
-      { controller: 'adminCtrl' },
-    )
+    .otherwise({ templateUrl: './home/home.html' }, { controller: 'adminCtrl' })
 })
 
 app.controller('adminCtrl', function ($scope) {
