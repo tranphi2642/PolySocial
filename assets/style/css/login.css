@@ -1,13 +1,10 @@
-section {
-    background: url('https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg');
-}
-
 .login {
     width: 100%;
     height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: url('https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg');
 }
 
 .form {
