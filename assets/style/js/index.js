@@ -33,9 +33,19 @@ app.config(function ($routeProvider) {
       { controller: 'feedbackCtrl' },
     )
     .when(
+      '/exercises',
+      { templateUrl: './views/exercises/exercises.html' },
+      { controller: 'exercisesCtrl' },
+    )
+    .when(
       '/deadlines',
       { templateUrl: './views/deadlines/deadlines.html' },
       { controller: 'deadlinesCtrl' },
+    )
+    .when(
+      '/exerciseDetails',
+      { templateUrl: './views/exerciseDetails/exerciseDetails.html' },
+      { controller: 'exerciseDetailsCtrl' },
     )
     .when(
       '/editProfile',
