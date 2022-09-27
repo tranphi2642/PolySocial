@@ -33,6 +33,11 @@ app.config(function ($routeProvider) {
       { controller: 'feedbackCtrl' },
     )
     .when(
+      '/deadlines',
+      { templateUrl: './views/deadlines/deadlines.html' },
+      { controller: 'deadlinesCtrl' },
+    )
+    .when(
       '/editProfile',
       { templateUrl: './views/editProfile/editProfile.html' },
       { controller: 'editProfileCtrl' },
