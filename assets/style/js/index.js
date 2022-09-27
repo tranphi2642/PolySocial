@@ -43,6 +43,16 @@ app.config(function ($routeProvider) {
       { controller: 'adminCtrl' },
     )
     .when(
+      '/groups',
+      { templateUrl: './views/admin/groups/groups.html' },
+      { controller: 'groupsCtrl' },
+    )
+    .when(
+      '/contents',
+      { templateUrl: './views/admin/contents/contents.html' },
+      { controller: 'contentsCtrl' },
+    )
+    .when(
       '/revenus',
       { templateUrl: './views/admin/revenus/revenus.html' },
       { controller: 'revenusCtrl' },
