@@ -1,43 +1,304 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <!-- ===== CSS ===== -->
-    <link rel="stylesheet" href="/assets/style/css/page.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-
-</head>
-
-<body>
-    <nav>
-        <div class="container">
-            <div class="logo">
-                <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n-234x375.png"
-                    alt="PolySoial">
-                <span> PolySocial</span>
+<nav ng-include="'./components/navbar/navbar.html'"></nav>
+<!------------------------------- Main ---------------------------->
+<main class="pages" ng-controller="pageCtrl">
+    <div class="container-page">
+        <div class="left">
+            <div class="background">
+                <img src="https://www.facebook.com/images/groups/groups-default-cover-photo-2x.png" alt="">
             </div>
-            <div class="search-bar">
-                <i class='uil uil-search'></i>
-                <input type="search" placeholder="Tìm kiếm">
+            <div class="title">
+                <span>SYB.IT16307_3.B2.2022</span>
+                <p class="text-muted"><i class="uil uil-lock"></i> Nhóm riêng tư - <i>31 thành viên</i></p>
             </div>
-            <div class="profile-picture">
-                <span>Trần Phi</span>
-                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
-                    alt="">
+            <div class="join">
+                <button><i class="uil uil-user-check"></i> Đã tham gia</button>
+                <button><i class="uil uil-plus"></i> Mời </button>
+                <button><i class="uil uil-ellipsis-h"></i> </button>
+            </div>
+            <!------------------------------- Side bar ---------------------------->
+            <div class="sidebar">
+                <a class="menu-item active">
+                    <span><i class='uil uil-home'></i></span>
+                    <h3>Trang chủ</h3>
+                </a>
+                <a class="menu-item" id="theme">
+                    <span><i class="uil uil-social-distancing"></i></span>
+                    <h3>Thảo luận</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-users-alt"></i></span>
+                    <h3>Thành viên</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class="uil uil-file-upload"></i></span>
+                    <h3>Tệp tải lên</h3>
+                </a>
+                <a class="menu-item">
+                    <span><i class='uil uil-signout'></i></span>
+                    <h3>Rời nhóm</h3>
+                </a>
             </div>
         </div>
-    </nav>
+        <div class="middle">
+            <!------------------------------- Create post ---------------------------->
+            <form class="create-post">
+                <div class="profile-photo">
+                    <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                        alt="">
+                </div>
+                <input type="text" name="post" id="create-post" placeholder="Hôm nay bạn muốn đăng gì thế?">
+                <input type="submit" value="Đăng bài" class="btn btn-primary">
+            </form>
+            <!------------------------------- End Create post ---------------------------->
 
-    <!------------------------------- Main ---------------------------->
-    <main>
-        <div class="container-page">
-            page
+            <!------------------------------- Feeds ---------------------------->
+            <div class="feeds">
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                    alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/293339640_1205671573501176_1658504986932176478_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=-z63eCvbXscAX_RUBlO&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-5.fna&oh=00_AT9usm4LY_VctxHmjqe6anWTolM5vIsaIk7cYRaGtaoEqg&oe=633778ED"
+                            alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                    alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/293339640_1205671573501176_1658504986932176478_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=-z63eCvbXscAX_RUBlO&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-5.fna&oh=00_AT9usm4LY_VctxHmjqe6anWTolM5vIsaIk7cYRaGtaoEqg&oe=633778ED"
+                            alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                    alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/293339640_1205671573501176_1658504986932176478_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=-z63eCvbXscAX_RUBlO&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-5.fna&oh=00_AT9usm4LY_VctxHmjqe6anWTolM5vIsaIk7cYRaGtaoEqg&oe=633778ED"
+                            alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+
+                <div class="feed">
+                    <div class="head">
+                        <div class="user">
+                            <div class="profile-photo">
+                                <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                    alt="">
+                            </div>
+                            <div class="info">
+                                <h3>Trần Phi</h3>
+                                <small> FPT Polytechnic, 15 phút trước </small>
+                            </div>
+                        </div>
+                        <span class="edit">
+                            <i class="uil uil-ellipsis-h"></i>
+                        </span>
+                    </div>
+
+                    <div class="photo">
+                        <img src="https://scontent.fsgn5-5.fna.fbcdn.net/v/t39.30808-6/293339640_1205671573501176_1658504986932176478_n.jpg?stp=cp6_dst-jpg&_nc_cat=100&ccb=1-7&_nc_sid=e3f864&_nc_ohc=-z63eCvbXscAX_RUBlO&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-5.fna&oh=00_AT9usm4LY_VctxHmjqe6anWTolM5vIsaIk7cYRaGtaoEqg&oe=633778ED"
+                            alt="">
+                    </div>
+
+                    <div class="action-buttons">
+                        <div class="interaction-buttons">
+                            <span>
+                                <i class="uil uil-heart"></i>
+                                <i class="uil uil-comment-notes"></i>
+                                <i class="uil uil-share-alt"></i>
+                            </span>
+                        </div>
+                        <div class="bookmark">
+                            <span>
+                                <i class="uil uil-bookmark-full"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="liked-by">
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+                        <span><img
+                                src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                                alt=""></span>
+
+                        <p>Được thích bởi <b>Trần Phi</b> và <b> 4 người khác</b> </p>
+                    </div>
+
+                    <div class="caption">
+                        <p><b>Trần Phi</b> Gia đình Coder Poly. <span>#Fpoly</span></p>
+                    </div>
+
+                    <div class="comments text-muted">Xem tất cả các bình luận</div>
+                </div>
+            </div>
+            <!------------------------------- End Feeds ---------------------------->
         </div>
-    </main>
-</body>
+        <!------------------------------- End Middle ---------------------------->
+        <div class="right">
+            <div class="about">
+                <h3>Giới thiệu</h3>
+                <span><i class="uil uil-lock"></i> Riêng tư</span>
+                <p>Chỉ thành viên mới nhìn thấy mọi người trong nhóm và những gì họ đăng.</p>
 
-</html>
+                <span><i class="uil uil-eye"></i> Hiển thị</span>
+                <p>Ai cũng có thể tìm nhóm này.</p>
+
+                <button>Tìm hiểu thêm</button>
+            </div>
+        </div>
+    </div>
+</main>

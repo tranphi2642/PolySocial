@@ -23,6 +23,11 @@ app.config(function ($routeProvider) {
       { controller: 'messageCtrl' },
     )
     .when(
+      '/page',
+      { templateUrl: './views/page/page.html' },
+      { controller: 'pageCtrl' },
+    )
+    .when(
       '/feedback',
       { templateUrl: './views/feedback/feedback.html' },
       { controller: 'feedbackCtrl' },
@@ -290,6 +295,25 @@ app.controller('homeCtrl', function ($scope) {
       bg1.classList.remove('active')
       bg2.classList.remove('active')
       changeBg()
+    })
+  })
+})
+
+app.controller('pageCtrl', function ($scope) {
+  angular.element(document).ready(function () {
+    const menuItem = document.querySelectorAll('.menu-item')
+
+    const changeActiveItem = () => {
+      menuItem.forEach((item) => {
+        item.classList.remove('active')
+      })
+    }
+
+    menuItem.forEach((item) => {
+      item.addEventListener('click', () => {
+        changeActiveItem()
+        item.classList.add('active')
+      })
     })
   })
 })

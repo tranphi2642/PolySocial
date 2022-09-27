@@ -10,11 +10,12 @@ main {
     align-items: center;
     margin: 0 auto;
     width: 75%;
-    height: 600px;
+    height: 500px;
     background: #fff;
     border-radius: 6px;
     padding: 10px 40px 10px 40px;
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(15%);
 }
 
 .feedback .content {
