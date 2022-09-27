@@ -23,6 +23,11 @@ app.config(function ($routeProvider) {
       { controller: 'messageCtrl' },
     )
     .when(
+      '/page',
+      { templateUrl: './views/page/page.html' },
+      { controller: 'pageCtrl' },
+    )
+    .when(
       '/feedback',
       { templateUrl: './views/feedback/feedback.html' },
       { controller: 'feedbackCtrl' },
@@ -294,8 +299,43 @@ app.controller('homeCtrl', function ($scope) {
   })
 })
 
+app.controller('pageCtrl', function ($scope) {
+  angular.element(document).ready(function () {
+    const menuItem = document.querySelectorAll('.menu-item')
+
+    const changeActiveItem = () => {
+      menuItem.forEach((item) => {
+        item.classList.remove('active')
+      })
+    }
+
+    menuItem.forEach((item) => {
+      item.addEventListener('click', () => {
+        changeActiveItem()
+        item.classList.add('active')
+      })
+    })
+  })
+})
+
 app.controller('adminCtrl', function ($scope) {
   angular.element(document).ready(function () {
+    //choose menu
+    const menuItemAdmin = document.querySelectorAll('ul .menu-item')
+    console.log(menuItemAdmin)
+    const changeActiveItem = () => {
+      menuItemAdmin.forEach((item) => {
+        item.classList.remove('active')
+      })
+    }
+
+    menuItemAdmin.forEach((item) => {
+      item.addEventListener('click', () => {
+        changeActiveItem()
+        item.classList.add('active')
+      })
+    })
+
     //admin home
     const body = document.querySelector('body'),
       modeToggle = body.querySelector('.mode-toggle')
@@ -325,6 +365,7 @@ app.controller('adminCtrl', function ($scope) {
 
 app.controller('revenusCtrl', function ($scope) {
   angular.element(document).ready(function () {
+    //charts
     const labels = [
       'Tháng 1',
       'Tháng 2',

@@ -111,7 +111,12 @@ body.dark .activity-data::-webkit-scrollbar-thumb:hover {
     height: 5px;
     width: 5px;
     border-radius: 50%;
-    background-color: var(--primary-color);
+    background-color: var(--orange-color);
+}
+
+.nav-links .menu-item.active i,
+.nav-links .menu-item.active .link-name {
+    color: #f1550e !important;
 }
 
 body.dark li a:hover:before {
@@ -142,7 +147,7 @@ body.dark li a:hover:before {
 
 .navbar-admin .nav-links li a:hover i,
 .navbar-admin .nav-links li a:hover .link-name {
-    color: var(--primary-color);
+    color: var(--orange-color);
 }
 
 body.dark .nav-links li a:hover i,
