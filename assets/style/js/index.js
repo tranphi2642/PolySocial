@@ -28,6 +28,11 @@ app.config(function ($routeProvider) {
       { controller: 'pageCtrl' },
     )
     .when(
+      '/pagePeoples',
+      { templateUrl: './views/pagePeoples/pagePeoples.html' },
+      { controller: 'pagePeoplesCtrl' },
+    )
+    .when(
       '/feedback',
       { templateUrl: './views/feedback/feedback.html' },
       { controller: 'feedbackCtrl' },
