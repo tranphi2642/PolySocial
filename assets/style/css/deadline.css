@@ -1,0 +1,110 @@
+.deadlines {
+    top: 4rem;
+}
+
+.container-deadlines {
+    padding: 0 4.7rem;
+}
+
+/* BEGIN CARD DESIGN */
+.deadline {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+    min-width: 300px;
+    height: 300px;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.3);
+    margin: 1.2rem;
+}
+
+.deadline-profile-img {
+    height: 70%;
+}
+
+.deadline-description-bk {
+    background-image: linear-gradient(0deg, #fc4a1a, #f7b733);
+    border-radius: 30px;
+    position: absolute;
+    top: 55%;
+    left: -5px;
+    height: 65%;
+    width: 108%;
+    transform: skew(19deg, -9deg);
+}
+
+.deadline-logo {
+    height: 80px;
+    width: 80px;
+    border-radius: 20px;
+    background-color: #fff;
+    position: absolute;
+    bottom: 30%;
+    left: 30px;
+    overflow: hidden;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.7);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.deadline-logo img {
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.deadline-description {
+    position: absolute;
+    color: #fff;
+    left: 120px;
+    bottom: 30%;
+}
+
+.deadline-description p {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.deadline-btn {
+    position: absolute;
+    color: #fff;
+    right: 30px;
+    bottom: 10%;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+}
+
+.deadline-btn a {
+    color: #fff;
+}
+
+.deadline-date {
+    position: absolute;
+    color: #fff;
+    left: 30px;
+    bottom: 10%;
+}
+
+/* END CARD DESIGN */
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    background-color: #eee;
+    min-height: 100vh;
+}
+
+.btn i:before {
+    width: 14px;
+    height: 14px;
+    position: fixed;
+    color: #fff;
+    background: #0077B5;
+    padding: 10px;
+    border-radius: 50%;
+    top: 5px;
+    right: 5px;
+}

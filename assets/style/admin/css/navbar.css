@@ -3,7 +3,7 @@
     --primary-color: #0E4BF1;
     --panel-color: #FFF;
     --text-color: #000;
-    --black-light-color: #707070;
+    --black-light-color: #3b3b3b;
     --border-color: #e6e5e5;
     --toggle-color: #DDD;
     --box1-color: #4DA3FF;
@@ -117,6 +117,7 @@ body.dark .activity-data::-webkit-scrollbar-thumb:hover {
 .nav-links .menu-item.active i,
 .nav-links .menu-item.active .link-name {
     color: #f1550e !important;
+    font-weight: 600;
 }
 
 body.dark li a:hover:before {
@@ -135,7 +136,7 @@ body.dark li a:hover:before {
 
 .navbar-admin .menu-items li a .link-name {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 600;
     color: var(--black-light-color);
     transition: var(--tran-05);
 }
@@ -148,11 +149,13 @@ body.dark li a:hover:before {
 .navbar-admin .nav-links li a:hover i,
 .navbar-admin .nav-links li a:hover .link-name {
     color: var(--orange-color);
+    font-weight: 600;
 }
 
 body.dark .nav-links li a:hover i,
 body.dark .nav-links li a:hover .link-name {
     color: var(--text-color);
+    font-weight: 600;
 }
 
 .navbar-admin .menu-items .logout-mode {

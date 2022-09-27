@@ -64,6 +64,19 @@ main .container .left .profile h4 {
     font-weight: 700;
 }
 
+main .container .left .profile .profile-photo {
+    width: 2rem;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+main .container .left .profile .profile-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 main .container .left a {
     display: block;
     transition: all 300ms ease;
@@ -77,6 +90,12 @@ main .container .left a {
     margin-top: 1rem;
     background: var(--color-white);
     border-radius: var(--card-border-radius);
+}
+
+.left .sidebar a {
+    transition: all 300ms ease;
+    text-decoration: none !important;
+    color: inherit;
 }
 
 .left .sidebar .menu-item {
@@ -114,7 +133,7 @@ main .container .left a {
 .left .sidebar h3 {
     margin-left: 1.5rem;
     font-size: 1rem;
-
+    font-weight: 700;
 }
 
 .left .sidebar .active {
@@ -169,12 +188,19 @@ main .container .left a {
     top: 0;
     left: 110%;
     width: 30rem;
+    height: 300px;
     background: var(--color-white);
     border-radius: var(--card-border-radius);
     padding: var(--card-padding);
+    border: 1px solid var(--color-light);
     box-shadow: 0 0 2rem hsl(var(--color-orange), 75%, 60% 25%);
     z-index: 8;
     display: none;
+    overflow-y: auto;
+}
+
+.left .notifications-popup::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
 .left .notifications-popup::before {
@@ -197,6 +223,10 @@ main .container .left a {
 
 .left .notifications-popup small {
     display: block;
+}
+
+.left .notifications-popup b {
+    font-weight: 600;
 }
 
 /*================== CREATE POST ==================*/
@@ -240,6 +270,10 @@ main .container .left a {
     gap: 1rem;
 }
 
+.middle .feed .user h3 {
+    font-weight: 700;
+}
+
 .middle .feed .photo {
     border-radius: var(--card-border-radius);
     overflow: hidden;
@@ -276,6 +310,14 @@ main .container .left a {
     margin-left: 0.5rem;
 }
 
+.middle .liked-by b {
+    font-weight: 600;
+}
+
+.middle .caption b {
+    font-weight: 600;
+}
+
 /*================== RIGHT ==================*/
 main .container .right {
     height: max-content;
@@ -303,6 +345,10 @@ main .container .right {
     margin-bottom: 1rem;
 }
 
+.right .messages .heading h4 {
+    font-weight: 700;
+}
+
 .right .messages i {
     font-size: 1.4rem;
 }
@@ -324,6 +370,7 @@ main .container .right {
     border-bottom: 4px solid var(--color-light);
     padding-bottom: 0.5rem;
     font-size: 0.85rem;
+    font-weight: 600;
 }
 
 .right .messages .category .active {
@@ -369,6 +416,10 @@ main .container .right {
     right: 0;
 }
 
+.right .messages .message .message-body h5 {
+    font-weight: 600;
+}
+
 /*================== FRIEND REQUESTs ==================*/
 
 .right .friend-requests {
@@ -390,12 +441,18 @@ main .container .right {
 .right .request .info {
     display: flex;
     gap: 1rem;
+    align-items: center;
     margin-bottom: 1rem;
+}
+
+.right .request .info h5 {
+    font-weight: 700;
 }
 
 .right .request .action {
     display: flex;
     gap: 1rem;
+    justify-content: center;
 }
 
 /*================== Custom theme ==================*/
