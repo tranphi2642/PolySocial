@@ -28,6 +28,11 @@ app.config(function ($routeProvider) {
       { controller: 'pageCtrl' },
     )
     .when(
+      '/pageDetails',
+      { templateUrl: './views/pageDetails/pageDetails.html' },
+      { controller: 'pageDetailsCtrl' },
+    )
+    .when(
       '/pagePeoples',
       { templateUrl: './views/pagePeoples/pagePeoples.html' },
       { controller: 'pagePeoplesCtrl' },
@@ -58,6 +63,11 @@ app.config(function ($routeProvider) {
       { controller: 'editProfileCtrl' },
     )
     .when(
+      '/teacher',
+      { templateUrl: './views/teacher/home/home.html' },
+      { controller: 'teacherCtrl' },
+    )
+    .when(
       '/admin',
       { templateUrl: './views/admin/home/home.html' },
       { controller: 'adminCtrl' },
@@ -80,11 +90,6 @@ app.config(function ($routeProvider) {
     .when(
       '/likes',
       { templateUrl: './views/admin/likes/likes.html' },
-      { controller: 'likesCtrl' },
-    )
-    .when(
-      '/shares',
-      { templateUrl: './views/admin/shares/shares.html' },
       { controller: 'likesCtrl' },
     )
     .when(
