@@ -1,3 +1,7 @@
+.text-bold {
+    font-weight: 600;
+}
+
 /*================== MAIN ==================*/
 .pages {
     position: relative;
@@ -12,7 +16,7 @@
 }
 
 .pages .container-page .left {
-    height: 800px;
+    height: 688px;
     background: var(--color-white);
     position: sticky;
     top: 4rem;
@@ -50,11 +54,81 @@
     border-radius: 10px;
 }
 
+.left .page-search h3 {
+    padding: 1rem 1rem 0 1rem;
+    font-weight: 700;
+    font-size: 22px;
+}
+
+.left .page-search hr {
+    width: 100%;
+    height: 1px;
+    padding-bottom: 1rem;
+    border-bottom: 2px solid var(--color-light);
+}
+
+.left .page-search .page-join {
+    width: 100%;
+    height: 600px;
+    overflow-y: auto;
+}
+
+.left .page-search .page-join::-webkit-scrollbar {
+    width: 0.5rem;
+}
+
+.left .page-search .page-join h4 {
+    padding: 1rem;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.left .page-search .page-join a {
+    transition: all 300ms ease;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.left .page-search .page-join .page {
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background: #fff;
+    padding-top: 0.5rem;
+    padding-left: 1rem;
+    margin-bottom: 1rem;
+}
+
+.left .page-search .page-join .page .page-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 20%;
+    overflow: hidden;
+}
+
+.left .page-search .page-join .page .page-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.page-join .page .handle h4 {
+    padding: 0.2rem 1rem;
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.page-join .page .handle p {
+    padding: 0.2rem 1rem;
+    font-weight: 400;
+    font-size: 14px;
+}
+
 .pages .container-page .middle {
     padding: 2rem;
     height: max-content;
     background: var(--color-light);
-
 }
 
 .pages .container-page .middle .people {
@@ -91,7 +165,14 @@
 }
 
 .middle .all-people {
+    width: 100%;
+    height: 350px;
     padding: 1rem;
+    overflow-y: auto;
+}
+
+.middle .all-people::-webkit-scrollbar {
+    width: 0.5rem;
 }
 
 .middle .all-people span {

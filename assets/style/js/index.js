@@ -28,6 +28,11 @@ app.config(function ($routeProvider) {
       { controller: 'pageCtrl' },
     )
     .when(
+      '/pageDetails',
+      { templateUrl: './views/pageDetails/pageDetails.html' },
+      { controller: 'pageDetailsCtrl' },
+    )
+    .when(
       '/pagePeoples',
       { templateUrl: './views/pagePeoples/pagePeoples.html' },
       { controller: 'pagePeoplesCtrl' },
@@ -80,11 +85,6 @@ app.config(function ($routeProvider) {
     .when(
       '/likes',
       { templateUrl: './views/admin/likes/likes.html' },
-      { controller: 'likesCtrl' },
-    )
-    .when(
-      '/shares',
-      { templateUrl: './views/admin/shares/shares.html' },
       { controller: 'likesCtrl' },
     )
     .when(
