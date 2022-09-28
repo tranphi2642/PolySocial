@@ -63,6 +63,11 @@ app.config(function ($routeProvider) {
       { controller: 'editProfileCtrl' },
     )
     .when(
+      '/teacher',
+      { templateUrl: './views/teacher/home/home.html' },
+      { controller: 'teacherCtrl' },
+    )
+    .when(
       '/admin',
       { templateUrl: './views/admin/home/home.html' },
       { controller: 'adminCtrl' },
