@@ -140,6 +140,7 @@
     transition: all 1s;
     color: #FFFFFF;
     font-size: 2rem;
+    border-radius: 10px;
 }
 
 .profile .wrapper .file-upload input[type='file'] {

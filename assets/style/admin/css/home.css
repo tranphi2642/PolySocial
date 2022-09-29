@@ -78,7 +78,7 @@
 
 .top span {
     font-size: 18px;
-    font-weight: 700;
+    font-weight: 400;
     color: var(--text-color);
     margin-right: 20px;
 }
@@ -115,7 +115,7 @@
 
 .dash-content .title .text {
     font-size: 24px;
-    font-weight: 700;
+    font-weight: 500;
     color: var(--text-color);
     margin-left: 10px;
 }
@@ -225,23 +225,23 @@
     }
 
     .navbar-admin~.dashboard {
-        left: 73px !important;
-        width: calc(100% - 73px) !important;
+        left: 73px;
+        width: calc(100% - 73px);
     }
 
     .navbar-admin.close~.dashboard {
-        left: 250px !important;
-        width: calc(100% - 250px) !important;
+        left: 250px;
+        width: calc(100% - 250px);
     }
 
     .navbar-admin~.dashboard .top {
-        left: 73px !important;
-        width: calc(100% - 73px) !important;
+        left: 73px;
+        width: calc(100% - 73px);
     }
 
     .navbar-admin.close~.dashboard .top {
-        left: 250px !important;
-        width: calc(100% - 250px) !important;
+        left: 250px;
+        width: calc(100% - 250px);
     }
 
     .activity .activity-data {

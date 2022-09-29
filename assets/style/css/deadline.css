@@ -90,12 +90,12 @@
 
 /* END CARD DESIGN */
 
-body {
+/* body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     background-color: #eee;
     min-height: 100vh;
-}
+} */
 
 .btn i:before {
     width: 14px;
