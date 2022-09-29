@@ -11,6 +11,7 @@
     --box3-color: #E7D1FC;
     --title-icon-color: #fff;
     --orange-color: #f1550e;
+    --select-color: #f3f3f3;
     /* ====== Transition ====== */
     --tran-05: all 0.5s ease;
     --tran-03: all 0.3s ease;
@@ -29,6 +30,7 @@ body.dark {
     --box2-color: #3A3B3C;
     --box3-color: #3A3B3C;
     --title-icon-color: #CCC;
+    --select-color: #3A3B3C;
 }
 
 /* === Custom Scroll Bar CSS === */

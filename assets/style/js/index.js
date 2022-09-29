@@ -30,12 +30,17 @@ app.config(function ($routeProvider) {
     .when(
       '/pageDetails',
       { templateUrl: './views/pageDetails/pageDetails.html' },
-      { controller: 'pageDetailsCtrl' },
+      { controller: 'pageCtrl' },
     )
     .when(
       '/pagePeoples',
       { templateUrl: './views/pagePeoples/pagePeoples.html' },
-      { controller: 'pagePeoplesCtrl' },
+      { controller: 'pageCtrl' },
+    )
+    .when(
+      '/quizs',
+      { templateUrl: './views/quizs/quizs.html' },
+      { controller: 'pageCtrl' },
     )
     .when(
       '/feedback',
@@ -75,12 +80,12 @@ app.config(function ($routeProvider) {
     .when(
       '/groups',
       { templateUrl: './views/admin/groups/groups.html' },
-      { controller: 'groupsCtrl' },
+      { controller: 'likesCtrl' },
     )
     .when(
       '/contents',
       { templateUrl: './views/admin/contents/contents.html' },
-      { controller: 'contentsCtrl' },
+      { controller: 'likesCtrl' },
     )
     .when(
       '/revenus',
@@ -374,7 +379,7 @@ app.controller('adminCtrl', function ($scope) {
     //admin home
     const body = document.querySelector('body'),
       modeToggle = body.querySelector('.mode-toggle')
-    sidebar = body.querySelector('nav')
+    sidebar = body.querySelector('.navbar-admin')
     sidebarToggle = body.querySelector('.sidebar-toggle')
 
     let getMode = localStorage.getItem('mode')
@@ -387,12 +392,21 @@ app.controller('adminCtrl', function ($scope) {
       sidebar.classList.toggle('close')
     }
 
-    modeToggle.addEventListener('click', () => {
+    modeToggle?.addEventListener('click', () => {
       body.classList.toggle('dark')
       if (body.classList.contains('dark')) {
         localStorage.setItem('mode', 'dark')
       } else {
         localStorage.setItem('mode', 'light')
+      }
+    })
+
+    sidebarToggle?.addEventListener('click', () => {
+      sidebar.classList.toggle('close')
+      if (sidebar.classList.contains('close')) {
+        localStorage.setItem('status', 'close')
+      } else {
+        localStorage.setItem('status', 'open')
       }
     })
   })
@@ -450,6 +464,12 @@ app.controller('likesCtrl', function ($scope) {
   angular.element(document).ready(function () {
     const tables = document.querySelectorAll('tbody tr')
 
+    const createGroup = document.querySelector('#createGroup')
+    const createModel1 = document.querySelector('.createGroup')
+
+    const createContent = document.querySelector('#createContent')
+    const createModel2 = document.querySelector('.createContent')
+
     const removeTableSelector = () => {
       tables.forEach((table) => {
         table.classList.remove('active-row')
@@ -462,5 +482,35 @@ app.controller('likesCtrl', function ($scope) {
         table.classList.add('active-row')
       })
     })
+
+    //create group
+    const onpenModel1 = () => {
+      createModel1.style.display = 'grid'
+    }
+
+    createGroup?.addEventListener('click', onpenModel1)
+
+    const closeModel1 = (e) => {
+      if (e.target.classList.contains('createGroup')) {
+        createModel1.style.display = 'none'
+      }
+    }
+
+    createModel1?.addEventListener('click', closeModel1)
+
+    //create content
+    const onpenModel2 = () => {
+      createModel2.style.display = 'grid'
+    }
+
+    createContent?.addEventListener('click', onpenModel2)
+
+    const closeModel2 = (e) => {
+      if (e.target.classList.contains('createContent')) {
+        createModel2.style.display = 'none'
+      }
+    }
+
+    createModel2?.addEventListener('click', closeModel2)
   })
 })
