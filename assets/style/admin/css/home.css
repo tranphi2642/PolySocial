@@ -78,7 +78,7 @@
 
 .top span {
     font-size: 18px;
-    font-weight: 400;
+    font-weight: 700;
     color: var(--text-color);
     margin-right: 20px;
 }
@@ -115,7 +115,7 @@
 
 .dash-content .title .text {
     font-size: 24px;
-    font-weight: 500;
+    font-weight: 700;
     color: var(--text-color);
     margin-left: 10px;
 }
