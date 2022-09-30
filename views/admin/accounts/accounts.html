@@ -1,0 +1,161 @@
+<div ng-include="'./components/admin/navbar/navbar.html'"></div>
+<!----------------------------Main--------------------------------->
+<section class="dashboard" ng-controller="likesCtrl">
+    <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+        <!-- <div class="search-box">
+            <i class="uil uil-search"></i>
+            <input type="text" placeholder="Tìm kiếm ở đây">
+        </div> -->
+
+        <div class="info">
+            <span>Trần Phi</span>
+            <img src="https://scontent.fsgn5-15.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=hLNY1fPXF4UAX95CXcf&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn5-15.fna&oh=00_AT_1e90z3c3a5uVdflraJCcUVuAHFs3HWyb5h2fnfasdsA&oe=6336378A"
+                alt="">
+        </div>
+    </div>
+
+    <div class="dash-content">
+        <div class="title-1">
+            <span><i class="uil uil-tachometer-fast-alt"></i> Thống kê tài khoản</span>
+            <a id="createAccount"><i class="uil uil-plus"></i> Tạo tài khoản</a>
+        </div>
+
+        <form action="#">
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Tìm kiếm ở đây">
+            </div>
+            <div class="select-box">
+                <select class="select">
+                    <option value="" selected>Lọc theo</option>
+                    <option value="1">MSSV</option>
+                    <option value="2">Họ và tên</option>
+                    <option value="3">Email</option>
+                </select>
+            </div>
+        </form>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>MSSV</th>
+                    <th>Họ và tên</th>
+                    <th>Email</th>
+                    <th>Trạng thái</th>
+                    <th>Ngày tạo</th>
+                </tr>
+            </thead>
+            <tbody class="body">
+                <tr class="active-row">
+                    <td>PS16509</td>
+                    <td>Trần Mậu Phi</td>
+                    <td>phitmps16509@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16501</td>
+                    <td>Phan Nguyễn Đăng Trường</td>
+                    <td>truongpndps16501@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16445</td>
+                    <td>Đặng Hoàng DUy</td>
+                    <td>duyhdps16445@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS14579</td>
+                    <td>Nguyễn Nhật Cao Thăng</td>
+                    <td>thangnncps14579@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16500</td>
+                    <td>Võ Thanh Nhã</td>
+                    <td>nhavtps16500@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16590</td>
+                    <td>Lê Duy Tiến</td>
+                    <td>tienldps16590@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16501</td>
+                    <td>Phan Nguyễn Đăng Trường</td>
+                    <td>truongpndps16501@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16445</td>
+                    <td>Đặng Hoàng DUy</td>
+                    <td>duyhdps16445@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS14579</td>
+                    <td>Nguyễn Nhật Cao Thăng</td>
+                    <td>thangnncps14579@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16500</td>
+                    <td>Võ Thanh Nhã</td>
+                    <td>nhavtps16500@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>30/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16590</td>
+                    <td>Lê Duy Tiến</td>
+                    <td>tienldps16590@fpt.edu.vn</td>
+                    <td>HDI</td>
+                    <td>23/09/2022</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="createAccount">
+    <div class="cart-create">
+        <form class="form-create">
+            <h3>Tạo tài khoản</h3>
+
+            <div class="form-input">
+                <label for="avt">Ảnh</label>
+                <input type="file" id="avt" placeholder="Hãy chọn ảnh">
+            </div>
+
+            <div class="form-input">
+                <label for="mssv">Mã số sinh viên</label>
+                <input type="text" id="mssv" placeholder="Hãy nhập mã số sinh viên" value="PS16509">
+            </div>
+
+            <div class="form-input">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname" placeholder="Hãy nhập họ và tên" value="Trần Mậu Phi">
+            </div>
+
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Hãy nhập email" value="phitmps16509@fpt.edu.vn">
+            </div>
+
+            <button><i class="uil uil-plus"></i> Tạo</button>
+        </form>
+    </div>
+</div>

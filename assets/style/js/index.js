@@ -93,6 +93,11 @@ app.config(function ($routeProvider) {
       { controller: 'revenusCtrl' },
     )
     .when(
+      '/accounts',
+      { templateUrl: './views/admin/accounts/accounts.html' },
+      { controller: 'accountsCtrl' },
+    )
+    .when(
       '/likes',
       { templateUrl: './views/admin/likes/likes.html' },
       { controller: 'likesCtrl' },
@@ -470,6 +475,9 @@ app.controller('likesCtrl', function ($scope) {
     const createContent = document.querySelector('#createContent')
     const createModel2 = document.querySelector('.createContent')
 
+    const createAccount = document.querySelector('#createAccount')
+    const createModel3 = document.querySelector('.createAccount')
+
     const removeTableSelector = () => {
       tables.forEach((table) => {
         table.classList.remove('active-row')
@@ -512,5 +520,20 @@ app.controller('likesCtrl', function ($scope) {
     }
 
     createModel2?.addEventListener('click', closeModel2)
+
+    //create account
+    const onpenModel3 = () => {
+      createModel3.style.display = 'grid'
+    }
+
+    createAccount?.addEventListener('click', onpenModel3)
+
+    const closeModel3 = (e) => {
+      if (e.target.classList.contains('createAccount')) {
+        createModel3.style.display = 'none'
+      }
+    }
+
+    createModel3?.addEventListener('click', closeModel3)
   })
 })
