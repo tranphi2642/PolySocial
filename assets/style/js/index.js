@@ -8,6 +8,11 @@ app.config(function ($routeProvider) {
       { controller: 'loginCtrl' },
     )
     .when(
+      '/info',
+      { templateUrl: './views/info/info.html' },
+      { controller: 'infoCtrl' },
+    )
+    .when(
       '/home',
       { templateUrl: './views/home/home.html' },
       { controller: 'homeCtrl' },

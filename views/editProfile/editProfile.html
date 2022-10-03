@@ -26,23 +26,25 @@
                     <h6>Thông tin người dùng</h6>
                     <div class="profile-details-row">
                         <div class="form-input">
+                            <label for="avatar">Ảnh</label>
+                            <input type="file" id="avatar" placeholder="Hãy chọn ảnh của bạn.">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="stCode">Mã số sinh viên</label>
+                            <input type="text" id="stCode" placeholder="Hãy nhập mã số sinh viên của bạn."
+                                value="PS16509">
+                        </div>
+
+                        <div class="form-input">
                             <label for="name">Họ và tên</label>
-                            <input type="text" id="name" placeholder="Trần Mậu Phi">
+                            <input type="text" id="name" placeholder="Hãy nhập họ và tên của bạn." value="Trần Mậu Phi">
                         </div>
 
                         <div class="form-input">
                             <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="phitmps16509@fpt.edu.vn">
-                        </div>
-
-                        <div class="form-input">
-                            <label for="">Ngày sinh</label>
-                            <input type="text" id="" placeholder="26/04/2002">
-                        </div>
-
-                        <div class="form-input">
-                            <label for="">Khoá</label>
-                            <input type="text" id="" placeholder="16.3">
+                            <input type="email" id="email" placeholder="Hãy nhập email của bạn."
+                                value="phitmps16509@fpt.edu.vn">
                         </div>
                     </div>
 
@@ -51,24 +53,47 @@
                     <h6>Thông tin liên lạc</h6>
                     <div class="profile-details-row">
                         <div class="form-input">
-                            <label for="">Lớp</label>
-                            <input type="text" id="" placeholder="ÍT6307_3">
+                            <label for="birthday">Ngày sinh</label>
+                            <input type="date" id="birthday" value="2002-04-26">
                         </div>
 
                         <div class="form-input">
-                            <label for="">Chuyên ngành</label>
-                            <input type="text" id="" placeholder="Ứng dụng phần mềm">
+                            <label for="gender">Giới tính</label>
+                            <div class="gender">
+                                <div>
+                                    <input type="radio" name="gender" id="gender" value="true">
+                                    <span class="checkmark">Nam</span>
+                                </div>
+                                <div>
+                                    <input type="radio" name="gender" id="gender" value="false">
+                                    <span class="checkmark">Nữ</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div class="form-input">
-                            <label for="">Điện thoại</label>
-                            <input type="text" id="" placeholder="0377166208">
+                            <label for="major">Chuyên ngành</label>
+                            <input type="text" id="major" placeholder="Hãy nhập chuyên ngành của bạn."
+                                value="Ứng dụng phần mềm">
                         </div>
 
                         <div class="form-input">
-                            <label for="">Địa chỉ</label>
-                            <input type="text" id="" placeholder="Quận 12, TP.Hồ Chí Minh">
+                            <label for="address">Địa chỉ</label>
+                            <input type="text" id="address" placeholder="Hãy nhập địa chỉ của bạn."
+                                value="Quận 12, TP.Hồ Chí Minh">
                         </div>
+
+                        <div class="form-input">
+                            <label for="major">Khoá</label>
+                            <input type="text" id="major" placeholder="Hãy nhập khoá của bạn." value="16.3">
+                        </div>
+
+                        <div class="form-input">
+                            <label for="dateCreate">Ngày tạo</label>
+                            <input type="date" id="dateCreate" placeholder="Hãy nhập ngày tạo của bạn."
+                                value="2022-10-01">
+                        </div>
+
                     </div>
 
                     <button type="submit">Cập nhật</button>
