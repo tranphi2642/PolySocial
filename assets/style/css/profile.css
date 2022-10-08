@@ -140,7 +140,10 @@ main {
     margin-bottom: 5px;
 }
 
-.profile-details-row .form-input input {
+.profile-details-row .form-input input[type="text"],
+.profile-details-row .form-input input[type="password"],
+.profile-details-row .form-input input[type="email"],
+.profile-details-row .form-input input[type="date"] {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;
