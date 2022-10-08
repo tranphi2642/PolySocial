@@ -318,6 +318,55 @@ main .container .left a {
     font-weight: 600;
 }
 
+.middle .cmt {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+
+}
+
+.middle .cmt .create-cmt {
+    display: flex;
+    margin: 0.5rem 0;
+}
+
+.middle .cmt .create-cmt .profile-photo-cmt {
+    padding-left: 10px;
+}
+
+.middle .cmt .create-cmt input {
+    padding-left: 20px;
+    background-color: var(--color-light);
+    color: var(--color-gray);
+}
+
+.middle .comments {
+    padding-left: 10px;
+    width: 100%;
+    height: max-content;
+}
+
+.middle .comments .profile-cmt {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.middle .profile-photo-cmt img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.middle .handle-cmt h4 {
+    font-weight: 600;
+}
+
 /*================== RIGHT ==================*/
 main .container .right {
     height: max-content;

@@ -16,7 +16,7 @@ main {
     width: 280px;
     height: 42%;
     margin-right: 20px;
-    background: #f7fafc;
+    background: var(--color-white);
     border-radius: 20px;
     position: relative;
 }
@@ -55,7 +55,6 @@ main {
     width: 50%;
     height: 45px;
     background: #ff7225;
-    border: 1px solid #e2e8f0;
     border-radius: 5px;
     display: flex;
     align-items: center;
@@ -75,14 +74,14 @@ main {
 .profile-details {
     width: calc(100% - 280px);
     height: 100%;
-    background: #f7fafc;
+    background: var(--color-white);
     border-radius: 20px;
 }
 
 .profile-details .title {
     width: 100%;
     height: 80px;
-    background: white;
+    background: linear-gradient(180deg, #fc4a1a, #f7b733);
     border-top-left-radius: 20px;
     border-top-right-radius: 20px;
     display: flex;
@@ -100,7 +99,7 @@ main {
 }
 
 .profile-details-body .hr {
-    border: 1px solid #e2e8f0;
+    border: 1px solid var(--color-white);
     margin-bottom: 20px;
 }
 
@@ -140,7 +139,10 @@ main {
     margin-bottom: 5px;
 }
 
-.profile-details-row .form-input input {
+.profile-details-row .form-input input[type="text"],
+.profile-details-row .form-input input[type="password"],
+.profile-details-row .form-input input[type="email"],
+.profile-details-row .form-input input[type="date"] {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;

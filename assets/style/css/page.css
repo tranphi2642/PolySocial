@@ -91,10 +91,10 @@
 
 .left .page-search .page-join .page {
     width: 100%;
-    height: 60px;
+    height: 65px;
     display: flex;
     align-items: center;
-    background: #fff;
+    background: var(--color-white);
     padding-top: 0.5rem;
     padding-left: 1rem;
     margin-bottom: 1rem;
