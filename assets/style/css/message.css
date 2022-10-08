@@ -8,7 +8,7 @@
     width: 75%;
     height: 650px;
     border-radius: 20px;
-    background: white;
+    background: var(--color-white);
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -41,7 +41,7 @@
 .sidebar-message-top span {
     font-size: 18px;
     font-weight: 700;
-    color: var(--color-black);
+    color: var(--color-orange);
 }
 
 .sidebar-message-top span:hover {
@@ -181,7 +181,7 @@
     width: 100%;
     height: calc(100% - 120px);
     overflow-y: auto;
-    background: #ddddf7;
+    background: var(--color-light);
 }
 
 .message-body-right::-webkit-scrollbar {
@@ -220,7 +220,7 @@
 }
 
 .message-body-right .message .messageContent p {
-    background-color: white;
+    background-color: var(--color-white);
     padding: 10px;
     border-radius: 0px 10px 10px 10px;
     max-width: max-content;
