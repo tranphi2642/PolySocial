@@ -474,13 +474,22 @@ app.controller('likesCtrl', function ($scope) {
     const tables = document.querySelectorAll('tbody tr')
 
     const createGroup = document.querySelector('#createGroup')
-    const createModel1 = document.querySelector('.createGroup')
+    const createModel1 = document.querySelector('.modal-create-group')
+
+    const updateGroup = document.querySelectorAll('.updateGroup')
+    const updateModel1 = document.querySelector('.modal-edit-group')
 
     const createContent = document.querySelector('#createContent')
-    const createModel2 = document.querySelector('.createContent')
+    const createModel2 = document.querySelector('.modal-create-content')
+
+    const updateContent = document.querySelectorAll('.updateContent')
+    const updateModel2 = document.querySelector('.modal-edit-content')
 
     const createAccount = document.querySelector('#createAccount')
-    const createModel3 = document.querySelector('.createAccount')
+    const createModel3 = document.querySelector('.modal-create-account')
+
+    const updateAccount = document.querySelectorAll('.updateAccount')
+    const updateModel3 = document.querySelector('.modal-edit-account')
 
     const removeTableSelector = () => {
       tables.forEach((table) => {
@@ -503,7 +512,7 @@ app.controller('likesCtrl', function ($scope) {
     createGroup?.addEventListener('click', onpenModel1)
 
     const closeModel1 = (e) => {
-      if (e.target.classList.contains('createGroup')) {
+      if (e.target.classList.contains('modal-create-group')) {
         createModel1.style.display = 'none'
       }
     }
@@ -518,7 +527,7 @@ app.controller('likesCtrl', function ($scope) {
     createContent?.addEventListener('click', onpenModel2)
 
     const closeModel2 = (e) => {
-      if (e.target.classList.contains('createContent')) {
+      if (e.target.classList.contains('modal-create-content')) {
         createModel2.style.display = 'none'
       }
     }
@@ -533,11 +542,62 @@ app.controller('likesCtrl', function ($scope) {
     createAccount?.addEventListener('click', onpenModel3)
 
     const closeModel3 = (e) => {
-      if (e.target.classList.contains('createAccount')) {
+      if (e.target.classList.contains('modal-create-account')) {
         createModel3.style.display = 'none'
       }
     }
 
     createModel3?.addEventListener('click', closeModel3)
+
+    //update account
+    const onpenUpdateModel3 = () => {
+      updateModel3.style.display = 'grid'
+    }
+
+    updateAccount.forEach((ele) =>
+      ele?.addEventListener('click', onpenUpdateModel3),
+    )
+
+    const closeUpdateModel3 = (e) => {
+      if (e.target.classList.contains('modal-edit-account')) {
+        updateModel3.style.display = 'none'
+      }
+    }
+
+    updateModel3?.addEventListener('click', closeUpdateModel3)
+
+    //update content
+    const onpenUpdateModel2 = () => {
+      updateModel2.style.display = 'grid'
+    }
+
+    updateContent.forEach((ele) =>
+      ele?.addEventListener('click', onpenUpdateModel2),
+    )
+
+    const closeUpdateModel2 = (e) => {
+      if (e.target.classList.contains('modal-edit-content')) {
+        updateModel2.style.display = 'none'
+      }
+    }
+
+    updateModel2?.addEventListener('click', closeUpdateModel2)
+
+    //update content
+    const onpenUpdateModel1 = () => {
+      updateModel1.style.display = 'grid'
+    }
+
+    updateGroup.forEach((ele) =>
+      ele?.addEventListener('click', onpenUpdateModel1),
+    )
+
+    const closeUpdateModel1 = (e) => {
+      if (e.target.classList.contains('modal-edit-group')) {
+        updateModel1.style.display = 'none'
+      }
+    }
+
+    updateModel1?.addEventListener('click', closeUpdateModel1)
   })
 })

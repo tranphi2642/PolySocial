@@ -131,6 +131,7 @@
                     <th>Email</th>
                     <th>Trạng thái</th>
                     <th>Ngày tạo</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody class="body">
@@ -140,6 +141,9 @@
                     <td>phitmps16509@fpt.edu.vn</td>
                     <td>HDI</td>
                     <td>30/09/2022</td>
+                    <td>
+                        <a class="updateAccount" data-user="456"><i class="uil uil-edit"></i></a>
+                    </td>
                 </tr>
                 <tr>
                     <td>PS16501</td>
@@ -147,6 +151,9 @@
                     <td>truongpndps16501@fpt.edu.vn</td>
                     <td>HDI</td>
                     <td>30/09/2022</td>
+                    <td>
+                        <a class="updateAccount" data-user="123"><i class="uil uil-edit"></i></a>
+                    </td>
                 </tr>
                 <tr>
                     <td>PS16445</td>
@@ -216,7 +223,7 @@
     </div>
 </section>
 
-<div class="createAccount">
+<div class="modal-create-account">
     <div class="cart-create">
         <form class="form-create">
             <h3>Tạo tài khoản</h3>
@@ -242,6 +249,39 @@
             </div>
 
             <button><i class="uil uil-plus"></i> Tạo</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal-edit-account">
+    <div class="cart-update">
+        <form class="form-create">
+            <h3>Chỉnh sửa hoặc xoá tài khoản</h3>
+
+            <div class="form-input">
+                <label for="avt">Ảnh</label>
+                <input type="file" id="avt" placeholder="Hãy chọn ảnh">
+            </div>
+
+            <div class="form-input">
+                <label for="mssv">Mã số sinh viên</label>
+                <input type="text" id="mssv" placeholder="Hãy nhập mã số sinh viên" value="PS16509">
+            </div>
+
+            <div class="form-input">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname" placeholder="Hãy nhập họ và tên" value="Trần Mậu Phi">
+            </div>
+
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Hãy nhập email" value="phitmps16509@fpt.edu.vn">
+            </div>
+            <div class="buttons-update">
+                <button><i class="uil uil-plus"></i> Cập nhật</button>
+                <button><i class="uil uil-trash"></i> Xoá</button>
+                <button><i class="uil uil-redo"></i> Làm mới</button>
+            </div>
         </form>
     </div>
 </div>
