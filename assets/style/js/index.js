@@ -372,7 +372,6 @@ app.controller('adminCtrl', function ($scope) {
   angular.element(document).ready(function () {
     //choose menu
     const menuItemAdmin = document.querySelectorAll('ul .menu-item')
-    console.log(menuItemAdmin)
     const changeActiveItem = () => {
       menuItemAdmin.forEach((item) => {
         item.classList.remove('active')

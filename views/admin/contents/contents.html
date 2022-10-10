@@ -1,163 +1,246 @@
-<div class="a">
-    <div ng-include="'./components/admin/navbar/navbar.html'"></div>
-    <!----------------------------Main--------------------------------->
-    <section class="dashboard" ng-controller="likesCtrl">
-        <div class="top">
-            <i class="uil uil-bars sidebar-toggle"></i>
+<nav class="navbar-admin" ng-controller="adminCtrl">
+    <div class="logo-name">
+        <div class="logo-image">
+            <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n-234x375.png"
+                alt="PolySoial">
+        </div>
 
-            <!-- <div class="search-box">
+        <span class="logo_name">PolySoial</span>
+    </div>
+
+    <div class="menu-items">
+        <ul class="nav-links">
+            <li>
+                <a href="#!admin" class="menu-item active">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!revenus" class="menu-item">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Thống kê</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!accounts" class="menu-item">
+                    <i class="uil uil-user-plus"></i>
+                    <span class="link-name">Tài khoản</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!groups" class="menu-item">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="link-name">Nhóm</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!contents" class="menu-item">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Bài viết</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!likes" class="menu-item">
+                    <i class="uil uil-heart-alt"></i>
+                    <span class="link-name">Yêu thích</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!comments" class="menu-item">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Bình luận</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item">
+                    <i class="uil uil-book-medical"></i>
+                    <span class="link-name">Tạo bài tập</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item">
+                    <i class="uil uil-book-medical"></i>
+                    <span class="link-name">Bảng điểm</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout-mode">
+            <li><a href="#!home">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Đăng xuất</span>
+                </a></li>
+
+            <li class="mode">
+                <a href="#">
+                    <i class="uil uil-moon"></i>
+                    <span class="link-name">Giao diện</span>
+                </a>
+
+                <div class="mode-toggle">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
+<!----------------------------Main--------------------------------->
+<section class="dashboard" ng-controller="likesCtrl">
+    <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+
+        <!-- <div class="search-box">
             <i class="uil uil-search"></i>
             <input type="text" placeholder="Tìm kiếm ở đây">
         </div> -->
 
-            <div class="info">
-                <span>Trần Phi</span>
-                <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SvS_-FkuD3MAX88uwY8&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn2-6.fna&oh=00_AT_G6wR5SKd7xiX0f6IyKSbLh7_3Tw7ewTHJlIN-knIUUQ&oe=6346098A"
-                    alt="">
+        <div class="info">
+            <span>Trần Phi</span>
+            <img src="https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/301707708_1234437030624630_612522317553963859_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_ohc=SvS_-FkuD3MAX88uwY8&tn=7UvbteFf5nhM_Hcw&_nc_ht=scontent.fsgn2-6.fna&oh=00_AT_G6wR5SKd7xiX0f6IyKSbLh7_3Tw7ewTHJlIN-knIUUQ&oe=6346098A"
+                alt="">
+        </div>
+    </div>
+
+    <div class="dash-content">
+        <div class="title-1">
+            <span><i class="uil uil-tachometer-fast-alt"></i> Thống kê bài viết</span>
+            <a id="createContent"><i class="uil uil-plus"></i> Tạo bài viết</a>
+        </div>
+
+        <form action="#">
+            <div class="search-box">
+                <i class="uil uil-search"></i>
+                <input type="text" placeholder="Tìm kiếm ở đây">
             </div>
-        </div>
+            <div class="select-box">
+                <select class="select">
+                    <option value="" selected>Lọc theo</option>
+                    <option value="1">Họ và tên</option>
+                    <option value="2">Email</option>
+                    <option value="3">Tên bài viết</option>
+                </select>
+            </div>
+        </form>
 
-        <div class="dash-content">
-            <div class="title-1">
-                <span><i class="uil uil-tachometer-fast-alt"></i> Thống kê bài viết</span>
-                <a id="createContent"><i class="uil uil-plus"></i> Tạo bài viết</a>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Họ và tên</th>
+                    <th>Trạng thái</th>
+                    <th>Tên bài viết</th>
+                    <th>Ngày tạo</th>
+                </tr>
+            </thead>
+            <tbody class="body">
+                <tr class="active-row">
+                    <td>PS16509</td>
+                    <td>Trần Mậu Phi</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16501</td>
+                    <td>Phan Nguyễn Đăng Trường</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16445</td>
+                    <td>Đặng Hoàng DUy</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS14579</td>
+                    <td>Nguyễn Nhật Cao Thăng</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16500</td>
+                    <td>Võ Thanh Nhã</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16590</td>
+                    <td>Lê Duy Tiến</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16501</td>
+                    <td>Phan Nguyễn Đăng Trường</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16445</td>
+                    <td>Đặng Hoàng DUy</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS14579</td>
+                    <td>Nguyễn Nhật Cao Thăng</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16500</td>
+                    <td>Võ Thanh Nhã</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+                <tr>
+                    <td>PS16590</td>
+                    <td>Lê Duy Tiến</td>
+                    <td>Mới tạo</td>
+                    <td>BV001</td>
+                    <td>23/09/2022</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</section>
+
+<div class="createContent">
+    <div class="cart-create">
+        <form class="form-create">
+            <h3>Tạo bài viết</h3>
+            <div class="form-input">
+                <label for="name">Tên bài viết</label>
+                <input type="text" id="name" placeholder="Hãy nhập tên bài viết" value="Lịch thi pháp luật chính trị">
             </div>
 
-            <form action="#">
-                <div class="search-box">
-                    <i class="uil uil-search"></i>
-                    <input type="text" placeholder="Tìm kiếm ở đây">
-                </div>
-                <div class="select-box">
-                    <select class="select">
-                        <option value="" selected>Lọc theo</option>
-                        <option value="1">Họ và tên</option>
-                        <option value="2">Email</option>
-                        <option value="3">Tên bài viết</option>
-                    </select>
-                </div>
-            </form>
+            <div class="form-input">
+                <label for="content">Nội dung</label>
+                <input type="text" id="content" placeholder="Hãy nhập nội dung bài đăng" value="....">
+            </div>
 
-            <table class="styled-table">
-                <thead>
-                    <tr>
-                        <th>Id</th>
-                        <th>Họ và tên</th>
-                        <th>Trạng thái</th>
-                        <th>Tên bài viết</th>
-                        <th>Ngày tạo</th>
-                    </tr>
-                </thead>
-                <tbody class="body">
-                    <tr class="active-row">
-                        <td>PS16509</td>
-                        <td>Trần Mậu Phi</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16501</td>
-                        <td>Phan Nguyễn Đăng Trường</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16445</td>
-                        <td>Đặng Hoàng DUy</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS14579</td>
-                        <td>Nguyễn Nhật Cao Thăng</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16500</td>
-                        <td>Võ Thanh Nhã</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16590</td>
-                        <td>Lê Duy Tiến</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16501</td>
-                        <td>Phan Nguyễn Đăng Trường</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16445</td>
-                        <td>Đặng Hoàng DUy</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS14579</td>
-                        <td>Nguyễn Nhật Cao Thăng</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16500</td>
-                        <td>Võ Thanh Nhã</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                    <tr>
-                        <td>PS16590</td>
-                        <td>Lê Duy Tiến</td>
-                        <td>Mới tạo</td>
-                        <td>BV001</td>
-                        <td>23/09/2022</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </section>
+            <div class="form-input">
+                <label for="">Người tạo</label>
+                <input type="text" id="" placeholder="Hãy nhập người tạo" value="Phòng đạo tạo">
+            </div>
 
-    <div class="createContent">
-        <div class="cart-create">
-            <form class="form-create">
-                <h3>Tạo bài viết</h3>
-                <div class="form-input">
-                    <label for="name">Tên bài viết</label>
-                    <input type="text" id="name" placeholder="Hãy nhập tên bài viết"
-                        value="Lịch thi pháp luật chính trị">
-                </div>
+            <div class="form-input">
+                <label for="">Ngày tạo</label>
+                <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
+            </div>
 
-                <div class="form-input">
-                    <label for="content">Nội dung</label>
-                    <input type="text" id="content" placeholder="Hãy nhập nội dung bài đăng" value="....">
-                </div>
-
-                <div class="form-input">
-                    <label for="">Người tạo</label>
-                    <input type="text" id="" placeholder="Hãy nhập người tạo" value="Phòng đạo tạo">
-                </div>
-
-                <div class="form-input">
-                    <label for="">Ngày tạo</label>
-                    <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
-                </div>
-
-                <button><i class="uil uil-plus"></i> Tạo</button>
-            </form>
-        </div>
+            <button><i class="uil uil-plus"></i> Tạo</button>
+        </form>
     </div>
 </div>
