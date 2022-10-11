@@ -2,6 +2,9 @@
 main {
     position: relative;
     top: 5.4rem;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 
 .container-profile {
@@ -72,7 +75,8 @@ main {
 }
 
 .profile-details {
-    width: calc(100% - 280px);
+    /* width: calc(100% - 280px);*/
+    width: 70%;
     height: 100%;
     background: var(--color-white);
     border-radius: 20px;
@@ -92,6 +96,7 @@ main {
 .profile-details .title span {
     font-size: 18px;
     font-weight: 600;
+    color: var(--color-white);
 }
 
 .profile-details-body {
@@ -99,7 +104,7 @@ main {
 }
 
 .profile-details-body .hr {
-    border: 1px solid var(--color-white);
+    border-bottom: 1px solid var(--color-gray);
     margin-bottom: 20px;
 }
 
@@ -142,7 +147,8 @@ main {
 .profile-details-row .form-input input[type="text"],
 .profile-details-row .form-input input[type="password"],
 .profile-details-row .form-input input[type="email"],
-.profile-details-row .form-input input[type="date"] {
+.profile-details-row .form-input input[type="date"],
+.profile-details-row .form-input input[type="file"] {
     padding: 10px;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -170,18 +176,36 @@ main {
     font-size: 17px;
 }
 
+.profile-details-row .select-box {
+    width: 100%;
+    border-color: rgba(50, 151, 211, .25);
+}
+
+.profile-details-row .select {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%);
+    border: none;
+    color: var(--text-color);
+    border-radius: 5px;
+    -webkit-appearance: none;
+}
+
 
 /* info  */
 .createInfo {
     width: 100%;
     height: 100vh;
-    background: url('https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg');
+    /* background: url('https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg'); */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.createInfo .form-info {
-    width: 1000px;
-    transform: translateX(40%);
-    padding-top: 10px;
+.createInfo .form-info .profile-details {
+    width: 100%;
+    height: max-content;
 }
 
 .createInfo .form-info .title {

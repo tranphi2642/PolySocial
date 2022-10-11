@@ -1,4 +1,90 @@
-<div ng-include="'./components/admin/navbar/navbar.html'"></div>
+<nav class="navbar-admin" ng-controller="adminCtrl">
+    <div class="logo-name">
+        <div class="logo-image">
+            <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n-234x375.png"
+                alt="PolySoial">
+        </div>
+
+        <span class="logo_name">PolySoial</span>
+    </div>
+
+    <div class="menu-items">
+        <ul class="nav-links">
+            <li>
+                <a href="#!admin" class="menu-item active">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!revenus" class="menu-item">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Thống kê</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!accounts" class="menu-item">
+                    <i class="uil uil-user-plus"></i>
+                    <span class="link-name">Tài khoản</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!groups" class="menu-item">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="link-name">Nhóm</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!contents" class="menu-item">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Bài viết</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!likes" class="menu-item">
+                    <i class="uil uil-heart-alt"></i>
+                    <span class="link-name">Yêu thích</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!comments" class="menu-item">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Bình luận</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item">
+                    <i class="uil uil-book-medical"></i>
+                    <span class="link-name">Tạo bài tập</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item">
+                    <i class="uil uil-book-medical"></i>
+                    <span class="link-name">Bảng điểm</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout-mode">
+            <li><a href="#!home">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Đăng xuất</span>
+                </a></li>
+
+            <li class="mode">
+                <a href="#">
+                    <i class="uil uil-moon"></i>
+                    <span class="link-name">Giao diện</span>
+                </a>
+
+                <div class="mode-toggle">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
 <!----------------------------Main--------------------------------->
 <section class="dashboard" ng-controller="likesCtrl">
     <div class="top">
@@ -45,6 +131,7 @@
                     <th>Email</th>
                     <th>Trạng thái</th>
                     <th>Ngày tạo</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody class="body">
@@ -54,6 +141,9 @@
                     <td>phitmps16509@fpt.edu.vn</td>
                     <td>HDI</td>
                     <td>30/09/2022</td>
+                    <td>
+                        <a class="updateAccount" data-user="456"><i class="uil uil-edit"></i></a>
+                    </td>
                 </tr>
                 <tr>
                     <td>PS16501</td>
@@ -61,6 +151,9 @@
                     <td>truongpndps16501@fpt.edu.vn</td>
                     <td>HDI</td>
                     <td>30/09/2022</td>
+                    <td>
+                        <a class="updateAccount" data-user="123"><i class="uil uil-edit"></i></a>
+                    </td>
                 </tr>
                 <tr>
                     <td>PS16445</td>
@@ -130,7 +223,7 @@
     </div>
 </section>
 
-<div class="createAccount">
+<div class="modal-create-account">
     <div class="cart-create">
         <form class="form-create">
             <h3>Tạo tài khoản</h3>
@@ -156,6 +249,39 @@
             </div>
 
             <button><i class="uil uil-plus"></i> Tạo</button>
+        </form>
+    </div>
+</div>
+
+<div class="modal-edit-account">
+    <div class="cart-update">
+        <form class="form-create">
+            <h3>Chỉnh sửa hoặc xoá tài khoản</h3>
+
+            <div class="form-input">
+                <label for="avt">Ảnh</label>
+                <input type="file" id="avt" placeholder="Hãy chọn ảnh">
+            </div>
+
+            <div class="form-input">
+                <label for="mssv">Mã số sinh viên</label>
+                <input type="text" id="mssv" placeholder="Hãy nhập mã số sinh viên" value="PS16509">
+            </div>
+
+            <div class="form-input">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname" placeholder="Hãy nhập họ và tên" value="Trần Mậu Phi">
+            </div>
+
+            <div class="form-input">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Hãy nhập email" value="phitmps16509@fpt.edu.vn">
+            </div>
+            <div class="buttons-update">
+                <button><i class="uil uil-plus"></i> Cập nhật</button>
+                <button><i class="uil uil-trash"></i> Xoá</button>
+                <button><i class="uil uil-redo"></i> Làm mới</button>
+            </div>
         </form>
     </div>
 </div>

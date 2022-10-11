@@ -1,4 +1,90 @@
-<div ng-include="'./components/admin/navbar/navbar.html'"></div>
+<nav class="navbar-admin" ng-controller="adminCtrl">
+    <div class="logo-name">
+        <div class="logo-image">
+            <img src="https://caodang.fpt.edu.vn/wp-content/uploads/18198154_10208600482868814_3469513_n-234x375.png"
+                alt="PolySoial">
+        </div>
+
+        <span class="logo_name">PolySoial</span>
+    </div>
+
+    <div class="menu-items">
+        <ul class="nav-links">
+            <li>
+                <a href="#!admin" class="menu-item active">
+                    <i class="uil uil-estate"></i>
+                    <span class="link-name">Trang chủ</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!revenus" class="menu-item">
+                    <i class="uil uil-chart"></i>
+                    <span class="link-name">Thống kê</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!accounts" class="menu-item">
+                    <i class="uil uil-user-plus"></i>
+                    <span class="link-name">Tài khoản</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!groups" class="menu-item">
+                    <i class="uil uil-users-alt"></i>
+                    <span class="link-name">Nhóm</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!contents" class="menu-item">
+                    <i class="uil uil-files-landscapes"></i>
+                    <span class="link-name">Bài viết</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!likes" class="menu-item">
+                    <i class="uil uil-heart-alt"></i>
+                    <span class="link-name">Yêu thích</span>
+                </a>
+            </li>
+            <li>
+                <a href="#!comments" class="menu-item">
+                    <i class="uil uil-comments"></i>
+                    <span class="link-name">Bình luận</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item">
+                    <i class="uil uil-book-medical"></i>
+                    <span class="link-name">Tạo bài tập</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="menu-item">
+                    <i class="uil uil-book-medical"></i>
+                    <span class="link-name">Bảng điểm</span>
+                </a>
+            </li>
+        </ul>
+
+        <ul class="logout-mode">
+            <li><a href="#!home">
+                    <i class="uil uil-signout"></i>
+                    <span class="link-name">Đăng xuất</span>
+                </a></li>
+
+            <li class="mode">
+                <a href="#">
+                    <i class="uil uil-moon"></i>
+                    <span class="link-name">Giao diện</span>
+                </a>
+
+                <div class="mode-toggle">
+                    <span class="switch"></span>
+                </div>
+            </li>
+        </ul>
+    </div>
+</nav>
 <!----------------------------Main--------------------------------->
 <section class="dashboard" ng-controller="adminCtrl">
     <div class="top">
