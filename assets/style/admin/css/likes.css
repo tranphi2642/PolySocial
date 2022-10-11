@@ -117,6 +117,11 @@
     padding: 12px 15px;
 }
 
+.styled-table tbody a {
+    color: var(--orange-color);
+    font-weight: 600;
+}
+
 .styled-table tbody tr {
     font-weight: 600;
     color: var(--text-color);
@@ -169,6 +174,8 @@
     margin-bottom: 1rem;
 }
 
+/* create content */
+
 .modal-create-content {
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
@@ -197,7 +204,7 @@
     margin-bottom: 1rem;
 }
 
-
+/* create account */
 .modal-create-account {
     background: rgba(255, 255, 255, 0.5);
     width: 100vw;
@@ -221,6 +228,35 @@
 }
 
 .modal-create-account .cart-create h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+/* create user */
+.modal-create-user {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.modal-create-user .cart-create {
+    background-color: var(--color-white);
+    padding: 3rem;
+    border-radius: var(--card-border-radius);
+    width: 50%;
+    box-shadow: 0 0 1rem var(--color-gray);
+}
+
+.modal-create-user .cart-create h3 {
     font-size: 24px;
     font-weight: 600;
     margin-bottom: 1rem;
@@ -361,4 +397,64 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+/* form delete user*/
+.modal-delete-user {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.modal-delete-user .cart-delete {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    width: 25%;
+    box-shadow: 0 0 1rem var(--color-gray);
+}
+
+.model-delete {
+    text-align: center;
+}
+
+.modal-delete-user .cart-delete .uil-check-circle {
+    font-size: 70px;
+    color: #ff7225;
+    margin-bottom: 1rem;
+}
+
+.modal-delete-user .cart-delete h2 {
+    font-size: 25px;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+.modal-delete-user .cart-delete h3 {
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.modal-delete-user .cart-delete .buttons-delete {
+    margin-top: 25px;
+}
+
+.modal-delete-user .cart-delete .buttons-delete button {
+    width: 40%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #ff7225;
+    border: 1px solid #e2e8f0;
+    color: white;
+    border-radius: 5px;
+    margin: 0 10px;
 }

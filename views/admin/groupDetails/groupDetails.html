@@ -104,8 +104,8 @@
 
     <div class="dash-content">
         <div class="title-1">
-            <span><i class="uil uil-tachometer-fast-alt"></i> Thống kê nhóm đã tạo</span>
-            <a id="createGroup"><i class="uil uil-plus"></i> Tạo nhóm</a>
+            <span><i class="uil uil-tachometer-fast-alt"></i> Thống kê sinh viên có trong nhóm đã tạo</span>
+            <a id="createUser"><i class="uil uil-plus"></i> Thêm sinh viên</a>
         </div>
 
         <form action="#">
@@ -130,7 +130,7 @@
                     <th>Họ và tên</th>
                     <th>Trạng thái</th>
                     <th>Tên nhóm</th>
-                    <th>Ngày tạo</th>
+                    <th>Ngày tham gia</th>
                     <th></th>
                 </tr>
             </thead>
@@ -138,85 +138,83 @@
                 <tr class="active-row">
                     <td>PS16509</td>
                     <td>Trần Mậu Phi</td>
-                    <td>Mới tạo</td>
-                    <td>
-                        <a href="#!groupDetails">BV001 </a>
-                    </td>
+                    <td>Đã tham gia</td>
+                    <td>BV001</td>
                     <td>23/09/2022</td>
                     <td>
-                        <a class="updateGroup" data-user="456"><i class="uil uil-edit"></i></a>
+                        <a class="deleteUser" data-user="456"><i class="uil uil-trash"></i></a>
                     </td>
                 </tr>
                 <tr>
                     <td>PS16501</td>
                     <td>Phan Nguyễn Đăng Trường</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                     <td>
-                        <a class="updateGroup" data-user="456"><i class="uil uil-edit"></i></a>
+                        <a class="deleteUser" data-user="456"><i class="uil uil-trash"></i></a>
                     </td>
                 </tr>
                 <tr>
                     <td>PS16445</td>
                     <td>Đặng Hoàng DUy</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS14579</td>
                     <td>Nguyễn Nhật Cao Thăng</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS16500</td>
                     <td>Võ Thanh Nhã</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS16590</td>
                     <td>Lê Duy Tiến</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS16501</td>
                     <td>Phan Nguyễn Đăng Trường</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS16445</td>
                     <td>Đặng Hoàng DUy</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS14579</td>
                     <td>Nguyễn Nhật Cao Thăng</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS16500</td>
                     <td>Võ Thanh Nhã</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
                 <tr>
                     <td>PS16590</td>
                     <td>Lê Duy Tiến</td>
-                    <td>Mới tạo</td>
+                    <td>Đã tham gia</td>
                     <td>BV001</td>
                     <td>23/09/2022</td>
                 </tr>
@@ -225,28 +223,29 @@
     </div>
 </section>
 
-<div class="modal-create-group">
+<div class="modal-create-user">
     <div class="cart-create">
         <form class="form-create">
-            <h3>Tạo nhóm học tập</h3>
+            <h3>Thêm sinh viên</h3>
+
             <div class="form-input">
-                <label for="group">Tên nhóm</label>
-                <input type="text" id="group" placeholder="Hãy nhập tên nhóm" value="SYB.IT16307_3.B2.2022">
+                <label for="avt">Ảnh</label>
+                <input type="file" id="avt" placeholder="Hãy chọn ảnh">
             </div>
 
             <div class="form-input">
-                <label for="member">Tổng thành viên</label>
-                <input type="number" id="member" placeholder="Hãy nhập số lượng thành viên" value="31">
+                <label for="mssv">Mã số sinh viên</label>
+                <input type="text" id="mssv" placeholder="Hãy nhập mã số sinh viên" value="PS16509">
             </div>
 
             <div class="form-input">
-                <label for="">Mô tả</label>
-                <input type="text" id="" placeholder="Hãy nhập mô tả">
+                <label for="fullname">Họ và tên</label>
+                <input type="text" id="fullname" placeholder="Hãy nhập họ và tên" value="Trần Mậu Phi">
             </div>
 
             <div class="form-input">
-                <label for="">Ngày tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
+                <label for="email">Email</label>
+                <input type="email" id="email" placeholder="Hãy nhập email" value="phitmps16509@fpt.edu.vn">
             </div>
 
             <button><i class="uil uil-plus"></i> Tạo</button>
@@ -254,35 +253,17 @@
     </div>
 </div>
 
-<div class="modal-edit-group">
-    <div class="cart-update">
-        <form class="form-create">
-            <h3>Chỉnh sửa hoặc xoá nhóm</h3>
-
-            <div class="form-input">
-                <label for="group">Tên nhóm</label>
-                <input type="text" id="group" placeholder="Hãy nhập tên nhóm" value="SYB.IT16307_3.B2.2022">
-            </div>
-
-            <div class="form-input">
-                <label for="member">Tổng thành viên</label>
-                <input type="number" id="member" placeholder="Hãy nhập số lượng thành viên" value="31">
-            </div>
-
-            <div class="form-input">
-                <label for="">Mô tả</label>
-                <input type="text" id="" placeholder="Hãy nhập mô tả">
-            </div>
-
-            <div class="form-input">
-                <label for="">Ngày tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
-            </div>
-
-            <div class="buttons-update">
-                <button><i class="uil uil-plus"></i> Cập nhật</button>
-                <button><i class="uil uil-trash"></i> Xoá</button>
-                <button><i class="uil uil-redo"></i> Làm mới</button>
+<div class="modal-delete-user">
+    <div class="cart-delete">
+        <form>
+            <div class="model-delete">
+                <i class="uil uil-check-circle"></i>
+                <h2>Hoàn thành</h2>
+                <h3>Bạn có muốn xoá sinh viên này không?</h3>
+                <div class="buttons-delete">
+                    <button><i class="uil uil-trash"></i> Xoá</button>
+                    <button class="closeUser"><i class="uil uil-times"></i>Huỷ</button>
+                </div>
             </div>
         </form>
     </div>
