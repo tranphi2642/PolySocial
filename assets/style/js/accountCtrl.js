@@ -1,4 +1,6 @@
-app.controller('accountCtrl', function ($scope) {
+let host = 'http://localhost:8080/api'
+
+app.controller('accountCtrl', function ($scope, $http) {
   angular.element(document).ready(function () {
     const tables = document.querySelectorAll('tbody tr')
 
@@ -54,4 +56,89 @@ app.controller('accountCtrl', function ($scope) {
 
     updateModel3?.addEventListener('click', closeUpdateModel3)
   })
+
+  $scope.account = {}
+
+  $scope.accounts = {}
+
+  $scope.load_All = function () {
+    var url = `${host}/account`
+    $http
+      .get(url)
+      .then((response) => {
+        $scope.accounts = response.data
+        console.log(response.data)
+        alert('Success')
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  $scope.edit = function (id) {
+    var url = `${host}/account/${id}`
+    $http
+      .get(url)
+      .then((response) => {
+        $scope.account = response.data
+        alert('Success')
+      })
+      .catch((error) => {
+        alert('Error')
+      })
+  }
+
+  $scope.create = function () {
+    var st = angular.copy($scope.account)
+    var url = `${host}/account`
+    $http
+      .post(url, st)
+      .then((response) => {
+        $scope.accounts.push(st)
+        $scope.reset()
+        alert('Success' + response)
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  $scope.update = function () {
+    var st = angular.copy($scope.account)
+    var url = `${host}/account/${$scope.account.id}`
+    $http
+      .put(url, st)
+      .then((response) => {
+        var index = $scope.accounts.findIndex((x) => x.id == $scope.account.id)
+        $scope.accounts[index] = response.data
+        alert('Success' + response)
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  $scope.delete = function (id) {
+    var url = `${host}/account/${id}`
+    $http
+      .delete(url)
+      .then((response) => {
+        var index = $scope.accounts.findIndex((x) => x.id == id)
+        $scope.accounts.splice(index, 1)
+        $scope.reset()
+        alert('Success' + response)
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  $scope.reset = function () {
+    $scope.account = { gender: true, country: '' }
+    $scope.key = null
+  }
+
+  //start
+  // $scope.load_All()
+  $scope.reset()
 })

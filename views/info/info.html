@@ -1,4 +1,4 @@
-<div class="createInfo">
+<div class="createInfo" ng-controller="infoCtrl">
     <form action="#!home" class="form-info">
         <div class="profile-details">
             <div class="title">
@@ -7,25 +7,37 @@
             <div class="profile-details-body">
                 <h6>Thông tin người dùng</h6>
                 <div class="profile-details-row">
-                    <div class="form-input">
-                        <label for="avatar">Ảnh</label>
-                        <input type="file" id="avatar" placeholder="Hãy chọn ảnh của bạn.">
+                    <div>
+                        <div class="form-input">
+                            <label for="avatar">Ảnh</label>
+                            <input type="file" id="avatar" accept="image/jpeg, image/png, image/jpg"
+                                placeholder="Hãy chọn ảnh của bạn.">
+                        </div>
+                        <div id="display-image"></div>
                     </div>
+                    <div>
+                        <div class="form-input">
+                            <label for="stCode">Mã số sinh viên</label>
+                            <input type="text" id="stCode" placeholder="Hãy nhập mã số sinh viên của bạn."
+                                value="PS16509">
+                        </div>
 
-                    <div class="form-input">
-                        <label for="stCode">Mã số sinh viên</label>
-                        <input type="text" id="stCode" placeholder="Hãy nhập mã số sinh viên của bạn." value="PS16509">
-                    </div>
+                        <div class="form-input">
+                            <label for="name">Họ và tên</label>
+                            <input type="text" id="name" placeholder="Hãy nhập họ và tên của bạn." value="Trần Mậu Phi">
+                        </div>
 
-                    <div class="form-input">
-                        <label for="name">Họ và tên</label>
-                        <input type="text" id="name" placeholder="Hãy nhập họ và tên của bạn." value="Trần Mậu Phi">
-                    </div>
+                        <div class="form-input">
+                            <label for="password">Mật khẩu</label>
+                            <input type="password" id="password" placeholder="Hãy nhập password của bạn."
+                                value="******************">
+                        </div>
 
-                    <div class="form-input">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" placeholder="Hãy nhập email của bạn."
-                            value="phitmps16509@fpt.edu.vn">
+                        <div class="form-input">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" placeholder="Hãy nhập email của bạn."
+                                value="phitmps16509@fpt.edu.vn">
+                        </div>
                     </div>
                 </div>
 
