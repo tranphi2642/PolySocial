@@ -196,11 +196,12 @@ main {
 /* info  */
 .createInfo {
     width: 100%;
-    height: 100vh;
+    /* height: 100vh; */
     /* background: url('https://ap.poly.edu.vn/theme/student_v2/media//bg/bg-3.jpg'); */
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 2rem 0;
 }
 
 .createInfo .form-info .profile-details {
@@ -211,4 +212,16 @@ main {
 .createInfo .form-info .title {
     background: linear-gradient(180deg, #fc4a1a, #f7b733);
     color: white;
+}
+
+#display-image {
+    width: 70%;
+    height: 260px;
+    margin: 0 auto;
+    background: url('https://www.filemail.com/images/marketing/upload-your-files.svg');
+    border: 1px solid rgb(163, 163, 163);
+    background-position: center;
+    background-size: cover;
+    object-fit: cover;
+    border-radius: 10px;
 }

@@ -1,6 +1,4 @@
 body {
-    color: var(--color-dark);
-    background: var(--color-light);
     overflow-x: hidden;
 }
 
