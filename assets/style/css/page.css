@@ -2,6 +2,147 @@
     font-weight: 600;
 }
 
+.btn {
+    display: inline-block;
+    padding: var(--btn-padding);
+    font-weight: 500;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: all 300ms ease;
+    font-size: 0.9rem;
+}
+
+.btn:hover {
+    opacity: 0.8;
+}
+
+.btn-primary {
+    background: var(--color-orange);
+    color: var(--color-white);
+}
+
+.search {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    margin: 10px 0px 10px 0px;
+}
+
+.search input {
+    position: absolute;
+    border: 1px solid #e6e5e5;
+    background-color: #e1e1e1;
+    padding: 0 25px 0 50px;
+    margin-left: 15px;
+    border-radius: 20px;
+    height: 100%;
+    width: 90%;
+    color: #000;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+}
+
+.search i {
+    position: absolute;
+    left: 25px;
+    font-size: 22px;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #585858;
+}
+
+/*================== SIDEBAR ==================*/
+
+.left .sidebar {
+    margin-top: 1rem;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+}
+
+.left .sidebar a {
+    transition: all 300ms ease;
+    text-decoration: none !important;
+    color: inherit;
+}
+
+.left .sidebar .menu-item {
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    cursor: pointer;
+    transition: all 300ms ease;
+    position: relative;
+}
+
+.left .sidebar .menu-item:hover {
+    background: var(--color-light);
+}
+
+.left .sidebar i {
+    font-size: 1.4rem;
+    color: var(--color-gray);
+    margin-left: 2rem;
+    position: relative;
+}
+
+.left .sidebar i .notification-count {
+    background: var(--color-danger);
+    color: white;
+    font-size: 0.7rem;
+    width: fit-content;
+    border-radius: 0.8rem;
+    padding: 0.1rem 0.4rem;
+    position: absolute;
+    top: -0.2rem;
+    right: -0.3rem;
+}
+
+.left .sidebar h3 {
+    margin-left: 1.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.left .sidebar .active {
+    background: var(--color-light);
+}
+
+.left .sidebar .active i,
+.left .sidebar .active h3 {
+    color: var(--color-orange);
+}
+
+.left .sidebar .active::before {
+    content: "";
+    display: block;
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    background: var(--color-orange);
+}
+
+.left .sidebar .menu-item:only-child {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    /* overflow: hidden; */
+}
+
+.left .sidebar .menu-item:first-child.active {
+    background: var(--color-white);
+    /* border-top-left-radius: var(--card-border-radius); */
+    border-top-right-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
+.left .sidebar .menu-item:last-child.active {
+    background: var(--color-white);
+    border-bottom-right-radius: var(--card-border-radius);
+    border-bottom-left-radius: var(--card-border-radius);
+    overflow: hidden;
+}
+
 /*================== MAIN ==================*/
 .pages {
     position: relative;
@@ -143,6 +284,144 @@
     padding: 1rem;
     font-weight: 700;
     font-size: 22px;
+}
+
+/*================== CREATE POST ==================*/
+.middle .create-post {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+}
+
+.middle .create-post input[type="text"] {
+    justify-self: start;
+    width: 100%;
+    padding-left: 1rem;
+    background: transparent;
+    color: var(--color-dark);
+    margin-right: 1rem;
+}
+
+/*================== FEEDs ==================*/
+
+.middle .feeds .feed {
+    background: var(--color-white);
+    border-radius: var(--card-border-radius);
+    padding: var(--card-padding);
+    margin: 1rem 0;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+.middle .feed .head {
+    display: flex;
+    justify-content: space-between;
+}
+
+.middle .feed .user {
+    display: flex;
+    gap: 1rem;
+}
+
+.middle .feed .user h3 {
+    font-weight: 700;
+}
+
+.middle .feed .photo {
+    border-radius: var(--card-border-radius);
+    overflow: hidden;
+    margin: 0.7rem 0;
+}
+
+.middle .feed .action-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.4rem;
+    margin: 0.6rem;
+}
+
+.middle .liked-by {
+    display: flex;
+}
+
+.middle .liked-by span {
+    width: 1.4rem;
+    height: 1.4rem;
+    display: block;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-white);
+    margin-left: -0.6rem;
+}
+
+.middle .liked-by span:first-child {
+    margin: 0;
+}
+
+.middle .liked-by p {
+    margin-left: 0.5rem;
+}
+
+.middle .liked-by b {
+    font-weight: 600;
+}
+
+.middle .caption b {
+    font-weight: 600;
+}
+
+.middle .cmt {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0.5rem 0;
+    background-color: var(--color-light);
+    border-radius: var(--border-radius);
+
+}
+
+.middle .cmt .create-cmt {
+    display: flex;
+    margin: 0.5rem 0;
+}
+
+.middle .cmt .create-cmt .profile-photo-cmt {
+    padding-left: 10px;
+}
+
+.middle .cmt .create-cmt input {
+    padding-left: 20px;
+    background-color: var(--color-light);
+    color: var(--color-gray);
+}
+
+.middle .comments {
+    padding-left: 10px;
+    width: 100%;
+    height: max-content;
+}
+
+.middle .comments .profile-cmt {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.middle .profile-photo-cmt img {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+}
+
+.middle .handle-cmt h4 {
+    font-weight: 600;
 }
 
 .middle .people hr {

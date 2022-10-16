@@ -1,124 +1,165 @@
-var app = angular.module('myapp', ['ngRoute'])
+var app = angular.module('myapp', ['ngRoute', 'angularCSS'])
 
 app.config(function ($routeProvider) {
   $routeProvider
-    .when(
-      '/login',
-      { templateUrl: './views/login/login.html' },
-      { controller: 'loginCtrl' },
-    )
-    .when(
-      '/info',
-      { templateUrl: './views/info/info.html' },
-      { controller: 'infoCtrl' },
-    )
-    .when(
-      '/home',
-      { templateUrl: './views/home/home.html' },
-      { controller: 'homeCtrl' },
-    )
-    .when(
-      '/profile',
-      { templateUrl: './views/profile/profile.html' },
-      { controller: 'profileCtrl' },
-    )
-    .when(
-      '/message',
-      { templateUrl: './components/message/message.html' },
-      { controller: 'messageCtrl' },
-    )
-    .when(
-      '/page',
-      { templateUrl: './views/page/page.html' },
-      { controller: 'pageCtrl' },
-    )
-    .when(
-      '/pageDetails',
-      { templateUrl: './views/pageDetails/pageDetails.html' },
-      { controller: 'pageCtrl' },
-    )
-    .when(
-      '/pagePeoples',
-      { templateUrl: './views/pagePeoples/pagePeoples.html' },
-      { controller: 'pageCtrl' },
-    )
-    .when(
-      '/quizs',
-      { templateUrl: './views/quizs/quizs.html' },
-      { controller: 'pageCtrl' },
-    )
-    .when(
-      '/feedback',
-      { templateUrl: './views/feedback/feedback.html' },
-      { controller: 'feedbackCtrl' },
-    )
-    .when(
-      '/exercises',
-      { templateUrl: './views/exercises/exercises.html' },
-      { controller: 'exercisesCtrl' },
-    )
-    .when(
-      '/deadlines',
-      { templateUrl: './views/deadlines/deadlines.html' },
-      { controller: 'deadlinesCtrl' },
-    )
-    .when(
-      '/exerciseDetails',
-      { templateUrl: './views/exerciseDetails/exerciseDetails.html' },
-      { controller: 'exerciseDetailsCtrl' },
-    )
-    .when(
-      '/editProfile',
-      { templateUrl: './views/editProfile/editProfile.html' },
-      { controller: 'editProfileCtrl' },
-    )
+    .when('/login', {
+      templateUrl: './views/login/login.html',
+      controller: 'loginCtrl',
+      css: {
+        href: './assets/style/css/login.css',
+      },
+    })
+    .when('/info', {
+      templateUrl: './views/info/info.html',
+      controller: 'infoCtrl',
+      css: {
+        href: './assets/style/css/profile.css',
+      },
+    })
+    .when('/home', {
+      templateUrl: './views/home/home.html',
+      controller: 'homeCtrl',
+      css: {
+        href: './assets/style/css/home.css',
+      },
+    })
+    .when('/profile', {
+      templateUrl: './views/profile/profile.html',
+      controller: 'profileCtrl',
+      css: {
+        href: './assets/style/css/profile.css',
+      },
+    })
+    .when('/message', {
+      templateUrl: './components/message/message.html',
+      controller: 'messageCtrl',
+      css: {
+        href: './assets/style/css/message.css',
+      },
+    })
+    .when('/page', {
+      templateUrl: './views/page/page.html',
+      controller: 'pageCtrl',
+      css: {
+        href: './assets/style/css/page.css',
+      },
+    })
+    .when('/pageDetails', {
+      templateUrl: './views/pageDetails/pageDetails.html',
+      controller: 'pageCtrl',
+      css: {
+        href: './assets/style/css/page.css',
+      },
+    })
+    .when('/pagePeoples', {
+      templateUrl: './views/pagePeoples/pagePeoples.html',
+      controller: 'pageCtrl',
+      css: {
+        href: './assets/style/css/page.css',
+      },
+    })
+    .when('/quizs', {
+      templateUrl: './views/quizs/quizs.html',
+      controller: 'pageCtrl',
+      css: {
+        href: './assets/style/css/page.css',
+      },
+    })
+    .when('/feedback', {
+      templateUrl: './views/feedback/feedback.html',
+      controller: 'feedbackCtrl',
+      css: {
+        href: './assets/style/css/feedback.css',
+      },
+    })
+    .when('/exercises', {
+      templateUrl: './views/exercises/exercises.html',
+      controller: 'exercisesCtrl',
+      css: {
+        href: './assets/style/css/exercises.css',
+      },
+    })
+    .when('/deadlines', {
+      templateUrl: './views/deadlines/deadlines.html',
+      controller: 'deadlinesCtrl',
+      css: {
+        href: './assets/style/css/deadlines.css',
+      },
+    })
+    .when('/exerciseDetails', {
+      templateUrl: './views/exerciseDetails/exerciseDetails.html',
+      controller: 'exerciseDetailsCtrl',
+      css: {
+        href: './assets/style/css/exercises.css',
+      },
+    })
+    .when('/editProfile', {
+      templateUrl: './views/editProfile/editProfile.html',
+      controller: 'editProfileCtrl',
+      css: {
+        href: './assets/style/css/profile.css',
+      },
+    })
     .when(
       '/teacher',
       { templateUrl: './views/teacher/home/home.html' },
       { controller: 'teacherCtrl' },
     )
-    .when(
-      '/admin',
-      { templateUrl: './views/admin/home/home.html' },
-      { controller: 'adminCtrl' },
-    )
-    .when(
-      '/groups',
-      { templateUrl: './views/admin/groups/groups.html' },
-      { controller: 'groupCrtl' },
-    )
-    .when(
-      '/groupDetails',
-      { templateUrl: './views/admin/groupDetails/groupDetails.html' },
-      { controller: 'groupCrtl' },
-    )
-    .when(
-      '/contents',
-      { templateUrl: './views/admin/contents/contents.html' },
-      { controller: 'contentCrtl' },
-    )
-    .when(
-      '/revenus',
-      { templateUrl: './views/admin/revenus/revenus.html' },
-      { controller: 'revenusCtrl' },
-    )
-    .when(
-      '/accounts',
-      { templateUrl: './views/admin/accounts/accounts.html' },
-      { controller: 'accountCtrl' },
-    )
-    .when(
-      '/likes',
-      { templateUrl: './views/admin/likes/likes.html' },
-      { controller: 'likesCtrl' },
-    )
-    .when(
-      '/comments',
-      { templateUrl: './views/admin/comments/comments.html' },
-      { controller: 'commentCtrl' },
-    )
-    .otherwise(
-      { templateUrl: './views/login/login.html' },
-      { controller: 'loginCtrl' },
-    )
+    .when('/admin', {
+      templateUrl: './views/admin/home/home.html',
+      controller: 'adminCtrl',
+      css: {
+        href: './assets/style/admin/css/home.css',
+      },
+    })
+    .when('/groups', {
+      templateUrl: './views/admin/groups/groups.html',
+      controller: 'groupCrtl',
+      css: {
+        href: './assets/style/admin/css/likes.css',
+      },
+    })
+    .when('/groupDetails', {
+      templateUrl: './views/admin/groupDetails/groupDetails.html',
+      controller: 'groupCrtl',
+      css: {
+        href: './assets/style/admin/css/likes.css',
+      },
+    })
+    .when('/contents', {
+      templateUrl: './views/admin/contents/contents.html',
+      controller: 'contentCrtl',
+      css: {
+        href: './assets/style/admin/css/likes.css',
+      },
+    })
+    .when('/revenus', {
+      templateUrl: './views/admin/revenus/revenus.html',
+      controller: 'revenusCtrl',
+      css: {
+        href: './assets/style/admin/css/revenus.css',
+      },
+    })
+    .when('/accounts', {
+      templateUrl: './views/admin/accounts/accounts.html',
+      controller: 'accountCtrl',
+      css: {
+        href: './assets/style/admin/css/likes.css',
+      },
+    })
+    .when('/likes', {
+      templateUrl: './views/admin/likes/likes.html',
+      controller: 'likesCtrl',
+      css: {
+        href: './assets/style/admin/css/likes.css',
+      },
+    })
+    .when('/comments', {
+      templateUrl: './views/admin/comments/comments.html',
+      controller: 'commentCtrl',
+      css: {
+        href: './assets/style/admin/css/likes.css',
+      },
+    })
+    .otherwise({ redirectTo: '/login' })
 })
