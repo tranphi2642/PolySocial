@@ -1,1 +1,1 @@
-app.controller('profileCtrl', function ($scope, $http) {})
+app.controller('profileDetailsCtrl', function ($scope, $http) {})
