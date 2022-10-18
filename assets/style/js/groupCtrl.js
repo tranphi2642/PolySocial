@@ -1,4 +1,4 @@
-app.controller('groupCrtl', function ($scope) {
+app.controller('groupCrtl', function ($scope, $http) {
   angular.element(document).ready(function () {
     const tables = document.querySelectorAll('tbody tr')
 
@@ -93,4 +93,89 @@ app.controller('groupCrtl', function ($scope) {
       ele?.addEventListener('click', closeDeleteModel5),
     )
   })
+
+  let host = 'http://localhost:8113/group'
+  $scope.group = {}
+
+  $scope.groups = {}
+
+  $scope.load_All = function () {
+    var url = `${host}/api/all`
+    $http
+      .get(url)
+      .then((response) => {
+        $scope.groups = response.data
+        console.log(response.data)
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  // $scope.edit = function (id) {
+  //   var url = `${host}/group/${id}`
+  //   $http
+  //     .get(url)
+  //     .then((response) => {
+  //       $scope.group = response.data
+  //       alert('Success')
+  //     })
+  //     .catch((error) => {
+  //       alert('Error')
+  //     })
+  // }
+
+  // $scope.create = function () {
+  //   var st = angular.copy($scope.group)
+  //   var url = `${host}/group`
+  //   $http
+  //     .post(url, st)
+  //     .then((response) => {
+  //       $scope.groups.push(st)
+  //       $scope.reset()
+  //       alert('Success' + response)
+  //     })
+  //     .catch((error) => {
+  //       alert('Error' + error)
+  //     })
+  // }
+
+  // $scope.update = function () {
+  //   var st = angular.copy($scope.group)
+  //   var url = `${host}/group/${$scope.group.id}`
+  //   $http
+  //     .put(url, st)
+  //     .then((response) => {
+  //       var index = $scope.groups.findIndex((x) => x.id == $scope.group.id)
+  //       $scope.groups[index] = response.data
+  //       alert('Success' + response)
+  //     })
+  //     .catch((error) => {
+  //       alert('Error' + error)
+  //     })
+  // }
+
+  // $scope.delete = function (id) {
+  //   var url = `${host}/group/${id}`
+  //   $http
+  //     .delete(url)
+  //     .then((response) => {
+  //       var index = $scope.groups.findIndex((x) => x.id == id)
+  //       $scope.groups.splice(index, 1)
+  //       $scope.reset()
+  //       alert('Success' + response)
+  //     })
+  //     .catch((error) => {
+  //       alert('Error' + error)
+  //     })
+  // }
+
+  // $scope.reset = function () {
+  //   $scope.group = { gender: true, country: '' }
+  //   $scope.key = null
+  // }
+
+  //start
+  $scope.load_All()
+  // $scope.reset()
 })

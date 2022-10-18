@@ -58,8 +58,8 @@ app.config(function ($routeProvider) {
         href: './assets/style/css/page.css',
       },
     })
-    .when('/quizs', {
-      templateUrl: './views/quizs/quizs.html',
+    .when('/pageQuizs', {
+      templateUrl: './views/pageQuizs/pageQuizs.html',
       controller: 'pageCtrl',
       css: {
         href: './assets/style/css/page.css',

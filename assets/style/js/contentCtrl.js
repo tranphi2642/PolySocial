@@ -1,4 +1,26 @@
-app.controller('contentCrtl', function ($scope) {
+app.controller('contentCrtl', function ($scope, $http) {
+  let host = 'http://localhost:8111/post'
+
+  $scope.content = {}
+
+  $scope.contents = {}
+
+  $scope.load_All = function () {
+    var url = `${host}/get/all`
+    $http
+      .get(url)
+      .then((response) => {
+        $scope.contents = response.data
+        console.log(response.data)
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  //start
+  $scope.load_All()
+
   angular.element(document).ready(function () {
     const tables = document.querySelectorAll('tbody tr')
 
@@ -54,4 +76,31 @@ app.controller('contentCrtl', function ($scope) {
 
     updateModel2?.addEventListener('click', closeUpdateModel2)
   })
+})
+
+angular.module('myapp').filter('cut', function () {
+  return function (value, wordwise, max, tail) {
+    if (!value) return ''
+
+    max = parseInt(max, 10)
+    if (!max) return value
+    if (value.length <= max) return value
+
+    value = value.substr(0, max)
+    if (wordwise) {
+      var lastspace = value.lastIndexOf(' ')
+      if (lastspace !== -1) {
+        //Also remove . and , so its gives a cleaner result.
+        if (
+          value.charAt(lastspace - 1) === '.' ||
+          value.charAt(lastspace - 1) === ','
+        ) {
+          lastspace = lastspace - 1
+        }
+        value = value.substr(0, lastspace)
+      }
+    }
+
+    return value + (tail || ' …')
+  }
 })

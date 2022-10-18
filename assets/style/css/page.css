@@ -151,13 +151,13 @@
 
 .pages .container-page {
     display: grid;
-    grid-template-columns: 25vw auto 25vw;
+    grid-template-columns: 25vw auto 20vw;
     position: relative;
     column-gap: 2.5rem;
 }
 
 .pages .container-page .left {
-    height: 688px;
+    height: calc(100vh - 4rem);
     background: var(--color-white);
     position: sticky;
     top: 4rem;
@@ -489,7 +489,7 @@
     margin-bottom: 5px;
 }
 
-.pages .container-page .right {
+/* .pages .container-page .right {
     height: max-content;
     position: sticky;
     top: 4rem;
@@ -528,4 +528,4 @@
     font-weight: 600;
     font-size: 15px;
     border-radius: 10px;
-}
+} */
