@@ -7,9 +7,6 @@ app.controller('accountCtrl', function ($scope, $http) {
     const createAccount = document.querySelector('#createAccount')
     const createModel3 = document.querySelector('.modal-create-account')
 
-    const updateAccount = document.querySelectorAll('.updateAccount')
-    const updateModel3 = document.querySelector('.modal-edit-account')
-
     //active row
     const removeTableSelector = () => {
       tables.forEach((table) => {
@@ -38,8 +35,12 @@ app.controller('accountCtrl', function ($scope, $http) {
     }
 
     createModel3?.addEventListener('click', closeModel3)
+  })
 
-    //update account
+  $scope.accountClick = function () {
+    const updateAccount = document.querySelectorAll('.updateAccount')
+    const updateModel3 = document.querySelector('.modal-edit-account')
+
     const onpenUpdateModel3 = () => {
       updateModel3.style.display = 'grid'
     }
@@ -55,7 +56,7 @@ app.controller('accountCtrl', function ($scope, $http) {
     }
 
     updateModel3?.addEventListener('click', closeUpdateModel3)
-  })
+  }
 
   $scope.account = {}
 

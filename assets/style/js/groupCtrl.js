@@ -5,15 +5,8 @@ app.controller('groupCrtl', function ($scope, $http) {
     const createUser = document.querySelector('#createUser')
     const createModel4 = document.querySelector('.modal-create-user')
 
-    const deleteUser = document.querySelectorAll('.deleteUser')
-    const closeUser = document.querySelectorAll('.closeUser')
-    const deleteModel5 = document.querySelector('.modal-delete-user')
-
     const createGroup = document.querySelector('#createGroup')
     const createModel1 = document.querySelector('.modal-create-group')
-
-    const updateGroup = document.querySelectorAll('.updateGroup')
-    const updateModel1 = document.querySelector('.modal-edit-group')
 
     //create user
     const onpenModel4 = () => {
@@ -58,8 +51,12 @@ app.controller('groupCrtl', function ($scope, $http) {
     }
 
     createModel1?.addEventListener('click', closeModel1)
+  })
 
-    //update group
+  $scope.groupClick = function () {
+    const updateGroup = document.querySelectorAll('.updateGroup')
+    const updateModel1 = document.querySelector('.modal-edit-group')
+
     const onpenUpdateModel1 = () => {
       updateModel1.style.display = 'grid'
     }
@@ -75,8 +72,13 @@ app.controller('groupCrtl', function ($scope, $http) {
     }
 
     updateModel1?.addEventListener('click', closeUpdateModel1)
+  }
 
-    //delete user
+  $scope.userClick = function () {
+    const deleteUser = document.querySelectorAll('.deleteUser')
+    const closeUser = document.querySelectorAll('.closeUser')
+    const deleteModel5 = document.querySelector('.modal-delete-user')
+
     const dopenDleteModel5 = () => {
       deleteModel5.style.display = 'grid'
     }
@@ -92,7 +94,7 @@ app.controller('groupCrtl', function ($scope, $http) {
     closeUser.forEach((ele) =>
       ele?.addEventListener('click', closeDeleteModel5),
     )
-  })
+  }
 
   let host = 'http://localhost:8113/group'
   $scope.group = {}

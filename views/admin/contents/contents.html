@@ -141,7 +141,8 @@
                     <td>{{content.group}}</td>
                     <td>{{content.createdDate | date:'dd/MM/yyyy'}}</td>
                     <td>
-                        <a class="updateContent" data-user="'{{content.postId}}'"><i class="uil uil-edit"></i></a>
+                        <a class="updateContent" data-user="'{{content.postId}}'" ng-click="contentClick()"><i
+                                class="uil uil-edit"></i></a>
                     </td>
                 </tr>
             </tbody>
