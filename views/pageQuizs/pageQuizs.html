@@ -49,6 +49,15 @@
                         <h4>Trần Phi<span> đã tạo mới một bài tập: Lab 1</span></h4>
                         <p class="text-muted">28/09/2022</p>
                     </div>
+
+                    <div class="wrapper">
+                        <span class="check-quiz">
+                            <p>0</p> Chưa nộp
+                        </span>
+                        <span class="check-quiz">
+                            <p>10</p> Đã nộp
+                        </span>
+                    </div>
                 </a>
 
                 <a href="#!pageQuizsDetails" class="profile">
@@ -139,6 +148,29 @@
 
                 <button>Tìm hiểu thêm</button>
             </div>
+            <div class="create-quiz">
+                <a id="createQuiz"><i class="uil uil-plus"></i> Tạo bài tập (Quiz)</a>
+            </div>
         </div>
     </div>
 </main>
+
+<div class="modal-create-quiz">
+    <div class="cart-create">
+        <form class="form-create">
+            <h3>Tạo bài tập (Quiz)</h3>
+
+            <div class="form-input">
+                <label for="content">Nội dung</label>
+                <input type="text" id="content" placeholder="Hãy nhập nội dung" value="Lab 1">
+            </div>
+
+            <div class="form-input">
+                <label for="deline">Hạn nộp</label>
+                <input type="date" id="deline" value="2022-10-19">
+            </div>
+
+            <button><i class="uil uil-plus"></i> Tạo</button>
+        </form>
+    </div>
+</div>
