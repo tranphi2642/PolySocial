@@ -65,32 +65,18 @@ app.config(function ($routeProvider) {
         href: './assets/style/css/page.css',
       },
     })
+    .when('/pageQuizsDetails', {
+      templateUrl: './views/pageQuizsDetails/pageQuizsDetails.html',
+      controller: 'pageCtrl',
+      css: {
+        href: './assets/style/css/page.css',
+      },
+    })
     .when('/feedback', {
       templateUrl: './views/feedback/feedback.html',
       controller: 'feedbackCtrl',
       css: {
         href: './assets/style/css/feedback.css',
-      },
-    })
-    .when('/exercises', {
-      templateUrl: './views/exercises/exercises.html',
-      controller: 'exercisesCtrl',
-      css: {
-        href: './assets/style/css/exercises.css',
-      },
-    })
-    .when('/deadlines', {
-      templateUrl: './views/deadlines/deadlines.html',
-      controller: 'deadlinesCtrl',
-      css: {
-        href: './assets/style/css/deadlines.css',
-      },
-    })
-    .when('/exerciseDetails', {
-      templateUrl: './views/exerciseDetails/exerciseDetails.html',
-      controller: 'exerciseDetailsCtrl',
-      css: {
-        href: './assets/style/css/exercises.css',
       },
     })
     .when('/editProfile', {
