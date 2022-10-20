@@ -105,7 +105,7 @@ app.config(function ($routeProvider) {
         href: './assets/style/admin/css/likes.css',
       },
     })
-    .when('/groupDetails', {
+    .when('/groupDetails/:groupId', {
       templateUrl: './views/admin/groupDetails/groupDetails.html',
       controller: 'groupCrtl',
       css: {

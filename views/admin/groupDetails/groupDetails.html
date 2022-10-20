@@ -86,7 +86,7 @@
     </div>
 </nav>
 <!----------------------------Main--------------------------------->
-<section class="dashboard">
+<section class="dashboard" ng-controller="groupDetailsCtrl">
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
 
@@ -110,7 +110,7 @@
         <form action="#">
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" placeholder="Tìm kiếm ở đây">
+                <input type="text" ng-model="searchUser" placeholder="Tìm kiếm ở đây">
             </div>
             <div class="select-box">
                 <select class="select">
@@ -129,141 +129,60 @@
                     <th>Họ và tên</th>
                     <th>Trạng thái</th>
                     <th>Tên nhóm</th>
-                    <th>Ngày tham gia</th>
+                    <th>Khoá</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody class="body">
-                <tr class="active-row">
-                    <td>PS16509</td>
-                    <td>Trần Mậu Phi</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
+            <tbody class="body" ng-repeat="user in users | filter:searchUser | orderBy:'user.userId' track by $index">
+                <tr>
+                    <td>{{user.user.userId}}</td>
+                    <td>{{user.user.fullName}}</td>
+                    <td>{{user.user.isActive ? 'Đã tham gia' : 'Chưa tham gia'}}</td>
+                    <td>{{user.group.name}}</td>
+                    <td>{{user.group.description}}</td>
                     <td>
-                        <a class="deleteUser" data-user="456" ng-click="userClick()"><i class="uil uil-trash"></i></a>
+                        <a class="deleteUser" data-user="456" ng-click="edit(user.group.groupId,user.user.userId)"><i
+                                class="uil uil-trash"></i></a>
                     </td>
-                </tr>
-                <tr>
-                    <td>PS16501</td>
-                    <td>Phan Nguyễn Đăng Trường</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                    <td>
-                        <a class="deleteUser" data-user="456"><i class="uil uil-trash"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>PS16445</td>
-                    <td>Đặng Hoàng DUy</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS14579</td>
-                    <td>Nguyễn Nhật Cao Thăng</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16500</td>
-                    <td>Võ Thanh Nhã</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16590</td>
-                    <td>Lê Duy Tiến</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16501</td>
-                    <td>Phan Nguyễn Đăng Trường</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16445</td>
-                    <td>Đặng Hoàng DUy</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS14579</td>
-                    <td>Nguyễn Nhật Cao Thăng</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16500</td>
-                    <td>Võ Thanh Nhã</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16590</td>
-                    <td>Lê Duy Tiến</td>
-                    <td>Đã tham gia</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
                 </tr>
             </tbody>
         </table>
     </div>
-</section>
 
-<div class="modal-create-user">
-    <div class="cart-create">
-        <form class="form-create">
-            <h3>Thêm sinh viên</h3>
+    <div class="modal-create-user">
+        <div class="cart-create">
+            <form class="form-create">
+                <h3>Thêm sinh viên</h3>
 
-            <div class="form-input">
-                <label for="avt">Ảnh</label>
-                <input type="file" id="avt" placeholder="Hãy chọn ảnh">
-            </div>
-
-            <div class="form-input">
-                <label for="mssv">Mã số sinh viên</label>
-                <input type="text" id="mssv" placeholder="Hãy nhập mã số sinh viên" value="PS16509">
-            </div>
-
-            <div class="form-input">
-                <label for="fullname">Họ và tên</label>
-                <input type="text" id="fullname" placeholder="Hãy nhập họ và tên" value="Trần Mậu Phi">
-            </div>
-
-            <div class="form-input">
-                <label for="email">Email</label>
-                <input type="email" id="email" placeholder="Hãy nhập email" value="phitmps16509@fpt.edu.vn">
-            </div>
-
-            <button><i class="uil uil-plus"></i> Tạo</button>
-        </form>
-    </div>
-</div>
-
-<div class="modal-delete-user">
-    <div class="cart-delete">
-        <form>
-            <div class="model-delete">
-                <i class="uil uil-check-circle"></i>
-                <h2>Hoàn thành</h2>
-                <h3>Bạn có muốn xoá sinh viên này không?</h3>
-                <div class="buttons-delete">
-                    <button><i class="uil uil-trash"></i> Xoá</button>
-                    <button class="closeUser"><i class="uil uil-times"></i>Huỷ</button>
+                <div class="form-input">
+                    <label for="userId">Mã tài khoản</label>
+                    <input type="text" id="userId" placeholder="Hãy nhập mã tài khoản" ng-model="user.userId">
                 </div>
-            </div>
-        </form>
+
+                <div class="form-input">
+                    <label for="groupId">Mã nhóm</label>
+                    <input type="text" id="groupId" placeholder="Hãy nhập mã nhóm" ng-model="user.groupId">
+                </div>
+
+                <button ng-click="createUser()"><i class="uil uil-plus"></i> Tạo</button>
+            </form>
+        </div>
     </div>
-</div>
+
+    <div class="modal-delete-user">
+        <div class="cart-delete">
+            <form>
+                <div class="model-delete">
+                    <i class="uil uil-check-circle"></i>
+                    <h2>Hoàn thành</h2>
+                    <h3>Bạn có muốn xoá sinh viên này không?</h3>
+                    <div class="buttons-delete">
+                        <button ng-click="deleteUser()"><i class="uil uil-trash"></i> Xoá</button>
+                        <button class="closeUser"><i class="uil uil-times"></i>Huỷ</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>

@@ -110,7 +110,7 @@
         <form action="#">
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" placeholder="Tìm kiếm ở đây">
+                <input type="text" ng-model="searchGroup" placeholder="Tìm kiếm ở đây">
             </div>
             <div class="select-box">
                 <select class="select">
@@ -129,23 +129,24 @@
                     <th>Tên Nhóm</th>
                     <th>Số lượng TV</th>
                     <th>Trạng thái</th>
-                    <th>Mô tả</th>
+                    <th>Khoá</th>
                     <th>Ngày tạo</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody class="body" ng-repeat="group in groups">
+            <tbody class="body"
+                ng-repeat="group in groups | filter:searchGroup | orderBy:'totalMember' track by $index">
                 <tr>
                     <td>{{group.groupId}}</td>
                     <td>
-                        <a href="#!groupDetails">{{group.name}} </a>
+                        <a href="#!groupDetails/{{group.groupId}}">{{group.name}} </a>
                     </td>
                     <td>{{group.totalMember}}</td>
                     <td>{{group.status ? 'Đã tạo' : 'Chưa tạo'}}</td>
                     <td>{{group.description}}</td>
                     <td>{{group.createdDate | date:'dd/MM/yyyy'}}</td>
                     <td>
-                        <a class="updateGroup" data-user="'{{group.groupId}}'" ng-click="groupClick()"><i
+                        <a class="updateGroup" data-user="'{{group.groupId}}'" ng-click="edit(group.groupId)"><i
                                 class="uil uil-edit"></i></a>
                     </td>
                 </tr>
@@ -156,29 +157,15 @@
 
 <div class="modal-create-group">
     <div class="cart-create">
-        <form class="form-create">
+        <form class="form-create" enctype='multipart/form-data'>
             <h3>Tạo nhóm học tập</h3>
             <div class="form-input">
-                <label for="group">Tên nhóm</label>
-                <input type="text" id="group" placeholder="Hãy nhập tên nhóm" value="SYB.IT16307_3.B2.2022">
+                <label for="upload">Tải tệp excel</label>
+                <input type="file" id="upload" name="upload" multiple
+                    onchange="angular.element(this).scope().create(files)" />
             </div>
 
-            <div class="form-input">
-                <label for="member">Tổng thành viên</label>
-                <input type="number" id="member" placeholder="Hãy nhập số lượng thành viên" value="31">
-            </div>
-
-            <div class="form-input">
-                <label for="">Mô tả</label>
-                <input type="text" id="" placeholder="Hãy nhập mô tả">
-            </div>
-
-            <div class="form-input">
-                <label for="">Ngày tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
-            </div>
-
-            <button><i class="uil uil-plus"></i> Tạo</button>
+            <!-- <button ng-click="create()"><i class="uil uil-plus"></i> Tạo</button> -->
         </form>
     </div>
 </div>
@@ -190,28 +177,29 @@
 
             <div class="form-input">
                 <label for="group">Tên nhóm</label>
-                <input type="text" id="group" placeholder="Hãy nhập tên nhóm" value="SYB.IT16307_3.B2.2022">
+                <input type="text" id="group" placeholder="Hãy nhập tên nhóm" ng-model="group.name">
             </div>
 
             <div class="form-input">
                 <label for="member">Tổng thành viên</label>
-                <input type="number" id="member" placeholder="Hãy nhập số lượng thành viên" value="31">
+                <input type="number" id="member" placeholder="Hãy nhập số lượng thành viên"
+                    ng-model="group.totalMember">
             </div>
 
             <div class="form-input">
-                <label for="">Mô tả</label>
-                <input type="text" id="" placeholder="Hãy nhập mô tả">
+                <label for="description">Mô tả</label>
+                <input type="text" id="description" placeholder="Hãy nhập mô tả" ng-model="group.description">
             </div>
 
             <div class="form-input">
                 <label for="">Ngày tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
+                <input type="datetime" id="" placeholder="Hãy nhập ngày tạo" ng-model="group.createdDate" disabled>
             </div>
 
             <div class="buttons-update">
-                <button><i class="uil uil-plus"></i> Cập nhật</button>
-                <button><i class="uil uil-trash"></i> Xoá</button>
-                <button><i class="uil uil-redo"></i> Làm mới</button>
+                <button ng-click="update()"><i class="uil uil-plus"></i> Cập nhật</button>
+                <button ng-click="delete(group.groupId)"><i class="uil uil-trash"></i> Xoá</button>
+                <button ng-click="reset()"><i class="uil uil-redo"></i> Làm mới</button>
             </div>
         </form>
     </div>
