@@ -49,6 +49,17 @@ app.controller('homeCtrl', function ($scope) {
             '#notifications .notification-count',
           )[0].style.display = 'none'
         }
+
+        if (item.id != 'notifications-deline') {
+          document.querySelectorAll('.notifications-deline')[0].style.display =
+            'none'
+        } else {
+          document.querySelectorAll('.notifications-deline')[0].style.display =
+            'block'
+          document.querySelectorAll(
+            '#notifications-deline .notification-count',
+          )[0].style.display = 'none'
+        }
       })
     })
 

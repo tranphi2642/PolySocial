@@ -86,7 +86,7 @@
     </div>
 </nav>
 <!----------------------------Main--------------------------------->
-<section class="dashboard" ng-controller="contentCrtl">
+<section class="dashboard">
     <div class="top">
         <i class="uil uil-bars sidebar-toggle"></i>
 
@@ -126,96 +126,24 @@
             <thead>
                 <tr>
                     <th>Id</th>
-                    <th>Họ và tên</th>
-                    <th>Trạng thái</th>
-                    <th>Tên bài viết</th>
+                    <th>Người tạo</th>
+                    <th>Nội dung</th>
+                    <th>Nhóm</th>
                     <th>Ngày tạo</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody class="body">
-                <tr class="active-row">
-                    <td>PS16509</td>
-                    <td>Trần Mậu Phi</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
+            <tbody class="body" ng-repeat="content in contents">
+                <tr>
+                    <td>{{content.postId}}</td>
+                    <td>{{content.user}}</td>
+                    <td>{{content.content | cut:true:100:' ...'}}</td>
+                    <td>{{content.group}}</td>
+                    <td>{{content.createdDate | date:'dd/MM/yyyy'}}</td>
                     <td>
-                        <a class="updateContent" data-user="456"><i class="uil uil-edit"></i></a>
+                        <a class="updateContent" data-user="'{{content.postId}}'" ng-click="contentClick()"><i
+                                class="uil uil-edit"></i></a>
                     </td>
-                </tr>
-                <tr>
-                    <td>PS16501</td>
-                    <td>Phan Nguyễn Đăng Trường</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                    <td>
-                        <a class="updateContent" data-user="456"><i class="uil uil-edit"></i></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>PS16445</td>
-                    <td>Đặng Hoàng DUy</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS14579</td>
-                    <td>Nguyễn Nhật Cao Thăng</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16500</td>
-                    <td>Võ Thanh Nhã</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16590</td>
-                    <td>Lê Duy Tiến</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16501</td>
-                    <td>Phan Nguyễn Đăng Trường</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16445</td>
-                    <td>Đặng Hoàng DUy</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS14579</td>
-                    <td>Nguyễn Nhật Cao Thăng</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16500</td>
-                    <td>Võ Thanh Nhã</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
-                </tr>
-                <tr>
-                    <td>PS16590</td>
-                    <td>Lê Duy Tiến</td>
-                    <td>Mới tạo</td>
-                    <td>BV001</td>
-                    <td>23/09/2022</td>
                 </tr>
             </tbody>
         </table>

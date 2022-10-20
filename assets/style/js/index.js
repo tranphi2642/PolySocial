@@ -58,8 +58,15 @@ app.config(function ($routeProvider) {
         href: './assets/style/css/page.css',
       },
     })
-    .when('/quizs', {
-      templateUrl: './views/quizs/quizs.html',
+    .when('/pageQuizs', {
+      templateUrl: './views/pageQuizs/pageQuizs.html',
+      controller: 'pageCtrl',
+      css: {
+        href: './assets/style/css/page.css',
+      },
+    })
+    .when('/pageQuizsDetails', {
+      templateUrl: './views/pageQuizsDetails/pageQuizsDetails.html',
       controller: 'pageCtrl',
       css: {
         href: './assets/style/css/page.css',
@@ -70,27 +77,6 @@ app.config(function ($routeProvider) {
       controller: 'feedbackCtrl',
       css: {
         href: './assets/style/css/feedback.css',
-      },
-    })
-    .when('/exercises', {
-      templateUrl: './views/exercises/exercises.html',
-      controller: 'exercisesCtrl',
-      css: {
-        href: './assets/style/css/exercises.css',
-      },
-    })
-    .when('/deadlines', {
-      templateUrl: './views/deadlines/deadlines.html',
-      controller: 'deadlinesCtrl',
-      css: {
-        href: './assets/style/css/deadlines.css',
-      },
-    })
-    .when('/exerciseDetails', {
-      templateUrl: './views/exerciseDetails/exerciseDetails.html',
-      controller: 'exerciseDetailsCtrl',
-      css: {
-        href: './assets/style/css/exercises.css',
       },
     })
     .when('/editProfile', {
@@ -119,7 +105,7 @@ app.config(function ($routeProvider) {
         href: './assets/style/admin/css/likes.css',
       },
     })
-    .when('/groupDetails', {
+    .when('/groupDetails/:groupId', {
       templateUrl: './views/admin/groupDetails/groupDetails.html',
       controller: 'groupCrtl',
       css: {
