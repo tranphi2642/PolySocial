@@ -326,6 +326,27 @@
     margin-bottom: 1rem;
 }
 
+.form-create .form-input .status {
+    margin-top: 10px;
+}
+
+.form-create .form-input .status>div {
+    display: inline;
+    position: relative;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.form-create .form-input .status input {
+    width: 17px;
+    height: 17px;
+}
+
+.form-create .form-input .status span {
+    font-size: 17px;
+}
+
 /* create account */
 .modal-create-account {
     background: rgba(255, 255, 255, 0.5);
@@ -484,6 +505,27 @@
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.modal-edit-content .form-input .status {
+    margin-top: 10px;
+}
+
+.modal-edit-content .form-input .status>div {
+    display: inline;
+    position: relative;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.modal-edit-content .form-input .status input {
+    width: 17px;
+    height: 17px;
+}
+
+.modal-edit-content .form-input .status span {
+    font-size: 17px;
 }
 
 /* form update group*/

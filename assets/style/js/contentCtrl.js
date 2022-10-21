@@ -5,6 +5,19 @@ app.controller('contentCrtl', function ($scope, $http) {
 
   $scope.contents = {}
 
+  $scope.findContents = function (content) {
+    var url = `${host}/find?content=${content}`
+    $http
+      .get(url)
+      .then(function (response) {
+        $scope.contents = response.data
+        alert('success')
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
   $scope.load_All = function () {
     var url = `${host}/get/all`
     $http
@@ -18,10 +31,7 @@ app.controller('contentCrtl', function ($scope, $http) {
       })
   }
 
-  //start
-  $scope.load_All()
-
-  $scope.contentClick = function () {
+  $scope.edit = function (id) {
     const updateContent = document.querySelectorAll('.updateContent')
     const updateModel2 = document.querySelector('.modal-edit-content')
 
@@ -40,7 +50,60 @@ app.controller('contentCrtl', function ($scope, $http) {
     }
 
     updateModel2?.addEventListener('click', closeUpdateModel2)
+
+    var url = `${host}/get/post?postId=${id}`
+    $http
+      .get(url)
+      .then((response) => {
+        $scope.content = response.data
+        $scope.content.createdDate = new Date($scope.content.createdDate)
+        console.log(response.data)
+      })
+      .catch((error) => {
+        alert('Error')
+      })
   }
+
+  $scope.updateContent = function () {
+    var st = angular.copy($scope.content)
+    var url = `${host}/update`
+    $http
+      .put(url, st)
+      .then((response) => {
+        alert('Success' + response)
+        window.location.reload()
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  $scope.deleteContent = function (id) {
+    var url = `${host}/delete?postId=${id}`
+    $http
+      .delete(url)
+      .then((response) => {
+        alert('Success' + response)
+        window.location.reload()
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
+
+  $scope.reset = function () {
+    $scope.content = {
+      postId: $scope.content.postId,
+      content: '',
+      createdDate: '',
+      userId: '',
+      groupId: '',
+    }
+  }
+
+  //start
+  $scope.load_All()
+  $scope.reset()
 
   angular.element(document).ready(function () {
     const tables = document.querySelectorAll('tbody tr')
@@ -76,24 +139,30 @@ app.controller('contentCrtl', function ($scope, $http) {
     }
 
     createModel2?.addEventListener('click', closeModel2)
-
-    //update content
-    // const onpenUpdateModel2 = () => {
-    //   updateModel2.style.display = 'grid'
-    // }
-
-    // updateContent.forEach((ele) =>
-    //   ele?.addEventListener('click', onpenUpdateModel2),
-    // )
-
-    // const closeUpdateModel2 = (e) => {
-    //   if (e.target.classList.contains('modal-edit-content')) {
-    //     updateModel2.style.display = 'none'
-    //   }
-    // }
-
-    // updateModel2?.addEventListener('click', closeUpdateModel2)
   })
+})
+
+app.controller('create-content', function ($scope, $http) {
+  let host = 'http://localhost:8111/post'
+
+  $scope.content = {}
+
+  $scope.contents = {}
+
+  $scope.createContent = function () {
+    var st = angular.copy($scope.content)
+    console.log(st)
+    var url = `${host}/create?userId=${st.userId}&groupId=${st.groupId}`
+    $http
+      .post(url, st)
+      .then((response) => {
+        alert('Success' + response)
+        window.location.reload()
+      })
+      .catch((error) => {
+        alert('Error' + error)
+      })
+  }
 })
 
 angular.module('myapp').filter('cut', function () {

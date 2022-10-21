@@ -110,7 +110,7 @@
         <form action="#">
             <div class="search-box">
                 <i class="uil uil-search"></i>
-                <input type="text" placeholder="Tìm kiếm ở đây">
+                <input type="text" ng-model="findContent" placeholder="Tìm kiếm ở đây">
             </div>
             <div class="select-box">
                 <select class="select">
@@ -129,19 +129,22 @@
                     <th>Người tạo</th>
                     <th>Nội dung</th>
                     <th>Nhóm</th>
+                    <th>Trạng thái</th>
                     <th>Ngày tạo</th>
                     <th></th>
                 </tr>
             </thead>
-            <tbody class="body" ng-repeat="content in contents">
+            <tbody class="body"
+                ng-repeat="content in contents | filter : findContent | orderBy:'group.groupId' track by $index">
                 <tr>
                     <td>{{content.postId}}</td>
-                    <td>{{content.user}}</td>
+                    <td>{{content.user.fullName}}</td>
                     <td>{{content.content | cut:true:100:' ...'}}</td>
-                    <td>{{content.group}}</td>
+                    <td>{{content.group.groupId}}</td>
+                    <td>{{content.status ? 'Hiển thị' : 'Chưa hiển thị'}}</td>
                     <td>{{content.createdDate | date:'dd/MM/yyyy'}}</td>
                     <td>
-                        <a class="updateContent" data-user="'{{content.postId}}'" ng-click="contentClick()"><i
+                        <a class=" updateContent" data-user="'{{content.postId}}'" ng-click="edit(content.postId)"><i
                                 class="uil uil-edit"></i></a>
                     </td>
                 </tr>
@@ -150,31 +153,46 @@
     </div>
 </section>
 
-<div class="modal-create-content">
+<div class="modal-create-content" ng-controller="create-content">
     <div class="cart-create">
         <form class="form-create">
             <h3>Tạo bài viết</h3>
+
             <div class="form-input">
-                <label for="name">Tên bài viết</label>
-                <input type="text" id="name" placeholder="Hãy nhập tên bài viết" value="Lịch thi pháp luật chính trị">
+                <label for="groupId">Mã nhóm</label>
+                <input type="text" id="groupId" placeholder="Hãy nhập mã nhóm" ng-model="content.groupId">
+            </div>
+
+            <div class="form-input">
+                <label for="userId">Mã người tạo</label>
+                <input type="text" id="userId" placeholder="Hãy nhập mã người tạo" ng-model="content.userId">
             </div>
 
             <div class="form-input">
                 <label for="content">Nội dung</label>
-                <input type="text" id="content" placeholder="Hãy nhập nội dung bài đăng" value="....">
+                <input type="text" id="content" placeholder="Hãy nhập nội dung bài đăng" ng-model="content.content">
             </div>
 
             <div class="form-input">
-                <label for="">Người tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập người tạo" value="Phòng đạo tạo">
+                <label for="createdDate">Ngày tạo</label>
+                <input type="datetime-local" id="createdDate" placeholder="Hãy nhập ngày tạo"
+                    ng-model="content.createdDate">
             </div>
 
             <div class="form-input">
-                <label for="">Ngày tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
+                <label for="status">Trạng thái</label>
+                <div class="status">
+                    <div>
+                        <input type="radio" id="status-true" ng-model="content.status" ng-value="true">
+                        <span class="checkmark">Hiển thị</span>
+                    </div>
+                    <div>
+                        <input type="radio" id="status-false" ng-model="content.status" ng-value="false">
+                        <span class="checkmark">Không hiển thị</span>
+                    </div>
+                </div>
             </div>
-
-            <button><i class="uil uil-plus"></i> Tạo</button>
+            <button ng-click="createContent()"><i class="uil uil-plus"></i> Tạo</button>
         </form>
     </div>
 </div>
@@ -185,29 +203,38 @@
             <h3>Chỉnh sửa hoặc xoá bài viết</h3>
 
             <div class="form-input">
-                <label for="name">Tên bài viết</label>
-                <input type="text" id="name" placeholder="Hãy nhập tên bài viết" value="Lịch thi pháp luật chính trị">
+                <label for="postId">Mã bài viết</label>
+                <input type="text" id="postId" ng-model="content.postId" disabled>
             </div>
 
             <div class="form-input">
                 <label for="content">Nội dung</label>
-                <input type="text" id="content" placeholder="Hãy nhập nội dung bài đăng" value="....">
+                <input type="text" id="content" placeholder="Hãy nhập nội dung bài đăng" ng-model="content.content">
             </div>
 
             <div class="form-input">
-                <label for="">Người tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập người tạo" value="Phòng đạo tạo">
+                <label for="createdDate">Ngày tạo</label>
+                <input type="date" id="createdDate" placeholder="Hãy nhập ngày tạo" ng-model="content.createdDate">
             </div>
 
             <div class="form-input">
-                <label for="">Ngày tạo</label>
-                <input type="text" id="" placeholder="Hãy nhập ngày tạo" value="09/29/2022">
+                <label for="status">Trạng thái</label>
+                <div class="status">
+                    <div>
+                        <input type="radio" id="status-true" ng-model="content.status" ng-value="true">
+                        <span class="checkmark">Hiển thị</span>
+                    </div>
+                    <div>
+                        <input type="radio" id="status-false" ng-model="content.status" ng-value="false">
+                        <span class="checkmark">Không hiển thị</span>
+                    </div>
+                </div>
             </div>
 
             <div class="buttons-update">
-                <button><i class="uil uil-plus"></i> Cập nhật</button>
-                <button><i class="uil uil-trash"></i> Xoá</button>
-                <button><i class="uil uil-redo"></i> Làm mới</button>
+                <button ng-click="updateContent()"><i class="uil uil-plus"></i> Cập nhật</button>
+                <button ng-click="deleteContent(content.postId)"><i class="uil uil-trash"></i> Xoá</button>
+                <button ng-click="reset()"><i class="uil uil-redo"></i> Làm mới</button>
             </div>
         </form>
     </div>
