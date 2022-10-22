@@ -5,9 +5,9 @@ app.controller('contentCrtl', function ($scope, $http) {
 
   $scope.contents = {}
 
-  $scope.findContents = function (content) {
+  $scope.findContents = async function (content) {
     var url = `${host}/find?content=${content}`
-    $http
+    await $http
       .get(url)
       .then(function (response) {
         $scope.contents = response.data
@@ -18,9 +18,9 @@ app.controller('contentCrtl', function ($scope, $http) {
       })
   }
 
-  $scope.load_All = function () {
+  $scope.load_All = async function () {
     var url = `${host}/get/all`
-    $http
+    await $http
       .get(url)
       .then((response) => {
         $scope.contents = response.data
@@ -31,7 +31,7 @@ app.controller('contentCrtl', function ($scope, $http) {
       })
   }
 
-  $scope.edit = function (id) {
+  $scope.edit = async function (id) {
     const updateContent = document.querySelectorAll('.updateContent')
     const updateModel2 = document.querySelector('.modal-edit-content')
 
@@ -52,7 +52,7 @@ app.controller('contentCrtl', function ($scope, $http) {
     updateModel2?.addEventListener('click', closeUpdateModel2)
 
     var url = `${host}/get/post?postId=${id}`
-    $http
+    await $http
       .get(url)
       .then((response) => {
         $scope.content = response.data
@@ -64,10 +64,10 @@ app.controller('contentCrtl', function ($scope, $http) {
       })
   }
 
-  $scope.updateContent = function () {
+  $scope.updateContent = async function () {
     var st = angular.copy($scope.content)
     var url = `${host}/update`
-    $http
+    await $http
       .put(url, st)
       .then((response) => {
         alert('Success' + response)
@@ -78,9 +78,9 @@ app.controller('contentCrtl', function ($scope, $http) {
       })
   }
 
-  $scope.deleteContent = function (id) {
+  $scope.deleteContent = async function (id) {
     var url = `${host}/delete?postId=${id}`
-    $http
+    await $http
       .delete(url)
       .then((response) => {
         alert('Success' + response)
@@ -149,11 +149,11 @@ app.controller('create-content', function ($scope, $http) {
 
   $scope.contents = {}
 
-  $scope.createContent = function () {
+  $scope.createContent = async function () {
     var st = angular.copy($scope.content)
     console.log(st)
     var url = `${host}/create?userId=${st.userId}&groupId=${st.groupId}`
-    $http
+    await $http
       .post(url, st)
       .then((response) => {
         alert('Success' + response)

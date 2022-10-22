@@ -40,9 +40,9 @@ app.controller('groupCrtl', function ($scope, $http, $routeParams) {
 
   $scope.groups = {}
 
-  $scope.load_All = function () {
+  $scope.load_All = async function () {
     var url = `${host}/api/all`
-    $http
+    await $http
       .get(url)
       .then((response) => {
         $scope.groups = response.data
@@ -53,7 +53,7 @@ app.controller('groupCrtl', function ($scope, $http, $routeParams) {
       })
   }
 
-  $scope.edit = function (id) {
+  $scope.edit = async function (id) {
     const updateGroup = document.querySelectorAll('.updateGroup')
     const updateModel1 = document.querySelector('.modal-edit-group')
 
@@ -74,7 +74,7 @@ app.controller('groupCrtl', function ($scope, $http, $routeParams) {
     updateModel1?.addEventListener('click', closeUpdateModel1)
 
     var url = `${host}/api/get?id=${id}`
-    $http
+    await $http
       .get(url)
       .then((response) => {
         $scope.group = response.data
@@ -105,11 +105,11 @@ app.controller('groupCrtl', function ($scope, $http, $routeParams) {
       })
   }
 
-  $scope.update = function () {
+  $scope.update = async function () {
     var group = angular.copy($scope.group)
     var url = `${host}/update`
     console.log(group)
-    $http
+    await $http
       .put(url, group)
       .then((response) => {
         alert('Success' + response)
@@ -120,9 +120,9 @@ app.controller('groupCrtl', function ($scope, $http, $routeParams) {
       })
   }
 
-  $scope.delete = function (id) {
+  $scope.delete = async function (id) {
     var url = `${host}/delete?groupId=${id}`
-    $http
+    await $http
       .delete(url)
       .then((response) => {
         alert('Success' + response)
@@ -202,9 +202,9 @@ app.controller('groupDetailsCtrl', function ($scope, $http, $routeParams) {
     $scope.groupId = groupId
     $scope.userId = userId
 
-    $scope.deleteUser = function () {
+    $scope.deleteUser = async function () {
       var url = `${host}/api/remove?groupId=${$scope.groupId}&userId=${$scope.userId}`
-      $http
+      await $http
         .delete(url)
         .then((response) => {
           alert('Success' + response)
@@ -223,9 +223,9 @@ app.controller('groupDetailsCtrl', function ($scope, $http, $routeParams) {
 
   $scope.user.groupId = $routeParams.groupId
 
-  $scope.load_All_User = function () {
+  $scope.load_All_User = async function () {
     var url = `${host}/api/get/student/?id=${$scope.user.groupId}`
-    $http
+    await $http
       .get(url)
       .then((response) => {
         $scope.users = response.data
@@ -236,10 +236,10 @@ app.controller('groupDetailsCtrl', function ($scope, $http, $routeParams) {
       })
   }
 
-  $scope.createUser = function () {
+  $scope.createUser = async function () {
     var st = angular.copy($scope.user)
     var url = `${host}/save?groupId=${st.groupId}&userId=${st.userId}`
-    $http
+    await $http
       .post(url)
       .then((response) => {
         alert('Success' + response)
