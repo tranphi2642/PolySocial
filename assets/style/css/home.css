@@ -3,6 +3,12 @@ body {
 }
 
 /* Style all */
+.h5 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #212529;
+}
+
 .btn {
     display: inline-block;
     padding: var(--btn-padding);
@@ -64,6 +70,7 @@ main .container .left .profile h4 {
 
 main .container .left .profile .profile-photo {
     width: 2rem;
+    height: 2rem;
     aspect-ratio: 1/1;
     border-radius: 50%;
     overflow: hidden;
@@ -286,6 +293,19 @@ main .container .left a {
     padding: var(--card-padding);
 }
 
+.middle .create-post .profile-photo-post {
+    width: 55px;
+    aspect-ratio: 1/1;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.middle .create-post .profile-photo-post img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 .middle .create-post input[type="text"] {
     justify-self: start;
     width: 100%;
@@ -365,6 +385,7 @@ main .container .left a {
 }
 
 .middle .cmt {
+    width: 100%;
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -375,7 +396,10 @@ main .container .left a {
 }
 
 .middle .cmt .create-cmt {
+    width: 100%;
+    height: 30px;
     display: flex;
+    align-items: center;
     margin: 0.5rem 0;
 }
 
@@ -384,9 +408,15 @@ main .container .left a {
 }
 
 .middle .cmt .create-cmt input {
+    width: 70%;
     padding-left: 20px;
     background-color: var(--color-light);
     color: var(--color-gray);
+}
+
+.middle .cmt .create-cmt button {
+    width: 21%;
+    padding: 0.5rem;
 }
 
 .middle .comments {
@@ -796,4 +826,106 @@ main .container .right {
     .customize-theme .card {
         width: 80vw;
     }
+}
+
+/* create content */
+.modal-create-post {
+    background: rgba(255, 255, 255, 0.5);
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    display: grid;
+    place-items: center;
+    font-size: 0.9rem;
+    display: none;
+}
+
+.modal-create-post .cart-create {
+    background-color: var(--color-white);
+    padding: 2rem;
+    border-radius: var(--card-border-radius);
+    width: 40%;
+    box-shadow: 0 0 1rem var(--color-gray);
+}
+
+.modal-create-post .cart-create h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+.modal-create-post .form-create .form-input .status {
+    margin-top: 10px;
+}
+
+.modal-create-post .form-create .form-input .status>div {
+    display: inline;
+    position: relative;
+    cursor: pointer;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+
+.modal-create-post .form-create .form-input .status input {
+    width: 17px;
+    height: 17px;
+}
+
+.modal-create-post .form-create .form-input .status span {
+    font-size: 17px;
+}
+
+.modal-create-post .form-create button {
+    width: 100%;
+    height: 40px;
+    font-size: 16px;
+    font-weight: 600;
+    background: #ff7225;
+    border: 1px solid #e2e8f0;
+    color: white;
+    border-radius: 10px;
+}
+
+.modal-create-post .form-create .form-input {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    border-color: rgba(50, 151, 211, .25);
+}
+
+.modal-create-post .form-create .form-input label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.modal-create-post .form-create .form-input input[type="file"] {
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    box-shadow: 0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%);
+}
+
+.modal-create-post .form-create .form-input textarea {
+    height: 100px;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 1px 3px rgb(50 50 93 / 15%), 0 1px 0 rgb(0 0 0 / 2%);
+}
+
+.modal-create-post .form-create .modal-profile {
+    padding: var(--card-padding);
+    display: flex;
+    align-items: center;
+    column-gap: 0.7rem;
+    width: 100%;
+}
+
+.modal-create-post .form-create .modal-profile .handle h4 {
+    font-weight: 600;
+    font-size: 20px;
 }
